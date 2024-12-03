@@ -1356,8 +1356,9 @@ img {
 
 </style>
 
+
 <!--about us content starts here-->
-<div class="aboutus-content d">
+<div class="aboutus-content d section">
 <div class="image-content">
     <img src="image/image1.jpg" alt="">
     <div class="no">
@@ -1367,7 +1368,9 @@ img {
     <div class="circ"><i class="fa-solid fa-graduation-cap"></i></div>
 </div>
 <div class="text-content">
-    <p><h3>About Us</h3></p>
+    <p><h3 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">About Us</h3></p>
+
+   
 <p><h2>Building a Lifelong Learning <br> and Thriving Community</h2></p>
 <p><h5>Birat Multiple College is dedicated to nurturing talents, fostering innovation, and creating a supportive environment where students and educators thrive together.</h5></p>
 
@@ -1389,12 +1392,134 @@ img {
             </div>
         </div>
     </div>
-    <a href="#" class="button-hover">
+    <a href="#" class="button-hover" style="background-color: green;">
         <h4>Discover More</h4>
         <i class="fa-solid fa-arrow-right"></i>
     </a>
 </div>
 </div> 
+
+<style>
+    /* Initial setup for the animation */
+.aboutus-content {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(100px); /* Start from below */
+    transition: all 0.8s ease-in-out; /* Smooth animation */
+}
+
+/* Animation when in viewport */
+.aboutus-content.visible {
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Move to the original position */
+}
+
+/* Hover effect for the button */
+.button-hover {
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth background color and transform */
+}
+
+.button-hover:hover {
+    background-color: #228B22; /* Darker green on hover */
+    transform: scale(1.1); /* Slight scale effect */
+}
+
+/* Hover effect for the image */
+.image-content img {
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth scale and filter */
+}
+
+.image-content img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    filter: brightness(0.8); /* Darken the image */
+}
+
+/* Hover effect for the icons */
+.circ {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.circ:hover {
+    transform: rotate(360deg); /* Spin effect on hover */
+    color: #4A90E2; /* Change color on hover */
+}
+
+/* Hover effect for the text content */
+.text-content p h3,
+.text-content p h2 {
+    transition: color 0.3s ease; /* Smooth text color change */
+}
+
+.text-content p h3:hover,
+.text-content p h2:hover {
+    color: #4A90E2; /* Highlight text on hover */
+}
+
+/* Hover effect for mission and vision containers */
+.container2:hover {
+    transform: scale(1.05); /* Slight scale effect */
+    transition: transform 0.3s ease; /* Smooth scale effect */
+}
+
+/* For animations on scroll */
+@media (max-width: 768px) {
+    .aboutus-content {
+        padding: 20px; /* Ensure proper padding for small screens */
+    }
+}
+
+
+
+/* Start the section with hidden opacity and translate it */
+.section {
+    opacity: 0;
+    transform: translateY(100px);
+    animation: none; /* No animation initially */
+}
+
+/* When the section becomes visible, apply the animation */
+.section.visible {
+    animation: slideIn 0.8s ease-in-out forwards; /* Apply animation */
+}
+
+/* Keyframe for the slideIn animation */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Add this to your existing CSS animations */
+
+/* Animation for all sections (this can be customized for each section) */
+.section img {
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth scale and filter */
+}
+
+.section img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    filter: brightness(0.8); /* Darken the image */
+}
+
+.section h2,
+.section h3 {
+    transition: color 0.3s ease; /* Smooth text color change */
+}
+
+.section h2:hover,
+.section h3:hover {
+    color: #4A90E2; /* Highlight text on hover */
+}
+
+
+
+
+</style>
 
   <!--account portion starts here-->
   <div class="account ">
@@ -1820,6 +1945,38 @@ window.addEventListener('scroll', () => {
 
 // Trigger scroll event to check for elements already in viewport when page loads
 window.dispatchEvent(new Event('scroll'));
+</script>
+
+<script>
+ // Select all the sections you want to animate on scroll
+const sections = document.querySelectorAll('.section');
+
+// Set up the observer options (when 50% of the section is in the viewport)
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3, // Trigger when 50% of the section is visible
+};
+
+// Create the observer function
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Add the 'visible' class to the section when it comes into view
+            entry.target.classList.add('visible');
+        } else {
+            // Remove the 'visible' class when the section goes out of view
+            entry.target.classList.remove('visible');
+        }
+    });
+}, options);
+
+// Observe each section
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+
 </script>
 
 
