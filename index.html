@@ -456,6 +456,7 @@
         gap: 5px;
     }
    
+   
     /* Header: Hide nav menu and only display logo and toggle menu icon */
     .header .nav-menu {
         display: none; /* Hide menu links */
@@ -550,7 +551,7 @@
     height: 100%;
     background-color: rgba(18, 0, 66, 0.9); /* Example background */
     transition: right 0.3s ease; /* Smooth sliding animation */
-    z-index: 1000;
+    z-index: 9999999;
 }
 
 
@@ -931,7 +932,9 @@
 </div>
 <div class="top-nav" style="background-color: #2a254d; font-weight: 10; color: white; font-style: normal; font-size: 14px;">
     <div class="nav-links">
-        <a href="#" style="color: white; font-size: 12px;" class="nav-item">HOME</a>
+        <a href="#" style="color: orangered; font-size: 20px;" class="nav-item">
+            <i class="fa-solid fa-house"></i>
+        </a>
         <a href="#" style="color: white; font-size: 12px;" class="nav-item">ADMISSION</a>
         <a href="#" style="color: white; font-size: 12px;" class="nav-item">LOGIN</a>
     </div>
@@ -959,12 +962,16 @@
     </div>
     <!-- Navigation Menu -->
     <nav class="nav-menu">
-        <a href="#notice" class="nav-item">NOTICE</a>
-        <a href="#course" class="nav-item">COURSE</a>
-        <a href="#gallery" class="nav-item">GALLERY</a>
-        <a href="#about-us" class="nav-item">ABOUT US</a>
-        <a href="#contact-us" class="nav-item">CONTACT US</a>
+        <a href="#notice" class="nav-item" style="text-decoration: none; transition: transform 0.3s; display: inline-block;">NOTICE</a>
+        <a href="#course" class="nav-item" style="text-decoration: none; transition: transform 0.3s; display: inline-block;">COURSE</a>
+        <a href="#gallery" class="nav-item" style="text-decoration: none; transition: transform 0.3s; display: inline-block;">GALLERY</a>
+        <a href="#about-us" class="nav-item" style="text-decoration: none; transition: transform 0.3s; display: inline-block;">ABOUT US</a>
+        <a href="#contact-us" class="nav-item" style="text-decoration: none; transition: transform 0.3s; display: inline-block;">CONTACT US</a>
     </nav>
+    
+   
+    
+    
     <a class="nav-link" href="#" onclick="toggleSidebar()">
         <i class="fas fa-bars" style="color: blue;"></i>
     </a>
@@ -1049,7 +1056,7 @@ img {
     </h1></p>
     
     <div class="course-box">     
-        <div class="course-template box1">
+        <div class="course-template box1" style="background-color: #4A90E2; border-top-left-radius: 15px; border-bottom-right-radius: 15px;">
             <div class="circ2">
                 <a href="#"><i class="fa-solid fa-heart"></i></a>
             </div>
@@ -1078,7 +1085,7 @@ img {
             </div>
             </a>
         </div>
-        <div class="course-template box2">
+        <div class="course-template box2" style="background-color: #4A90E2; border-top-left-radius: 15px; border-bottom-right-radius: 15px;">
             <div class="circ2">
                 <a href="#"><i class="fa-solid fa-heart"></i></a>
             </div>
@@ -1107,7 +1114,7 @@ img {
             </div>
             </a>
         </div>
-        <div class="course-template box3">
+        <div class="course-template box3" style="background-color: #4A90E2; border-top-left-radius: 15px; border-bottom-right-radius: 15px;">
             <div class="circ2">
                 <a href="#"><i class="fa-solid fa-heart"></i></a>
             </div>
@@ -1148,14 +1155,25 @@ img {
         BMC Highlights <span style="color: orangered;">!</span>
     </h1></p>
 </div>
-<div style="font-family: 'Roboto', sans-serif; margin-bottom: 50px; margin-top: -30px; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #ffffff;">
+<div style="
+    font-family: 'Roboto', sans-serif; 
+    margin-bottom: 50px; 
+    margin-top: -100px; 
+    padding: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    background-color: #ffffff; 
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('image/higlightbackground.png') no-repeat center center / cover;">
    
    <div id="carousel-container" style="text-align: center; max-width: 1100px; width: 100%; padding: 20px; 
         border-radius: 10px; 
+        margin-top: 100px;
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.7);">
 
         <div class="carousel-slide">
-            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: end;">
+            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: center;">
                 TRANSFORMING ACADEMIA
             </h1>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 20px;">
@@ -1181,7 +1199,7 @@ img {
         </div>
 
         <div class="carousel-slide">
-            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: end;">
+            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: center;">
                 INSPIRING INNOVATION
             </h1>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 20px;">
@@ -1207,7 +1225,7 @@ img {
         </div>
 
         <div class="carousel-slide">
-            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: end;">
+            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: center;">
                 NURTURING LEADERS
             </h1>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 20px;">
@@ -1262,9 +1280,17 @@ img {
 </div>
 
 <!--About Us starts here-->
-<div class="about-us" style="margin-top: -50px;">
-    <div class="templates">
-        <div class="template-1">
+<div class="about-us" style="
+    margin-top: -300px; 
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+    url('image/whybackground.png') no-repeat center center / cover; 
+    min-height: 100vh; 
+    padding: 20px;">
+   >
+   
+
+    <div class="templates" style="margin-top: 200px;" >
+        <div class="template-1" style="background-color: #4A90E2;">
             <div class="temp-back">
                 <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
                 <h4><b>Experienced Faculty</b></h4>
@@ -1274,7 +1300,7 @@ img {
                 </a>
             </div>
         </div>
-        <div class="template-1">
+        <div class="template-1" style="background-color: #4A90E2;">
             <div class="temp-back">
                 <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
                 <h4><b>Comprehensive Curriculum</b></h4>
@@ -1284,7 +1310,7 @@ img {
                 </a>
             </div>
         </div>
-        <div class="template-1">
+        <div class="template-1" style="background-color: #4A90E2;">
             <div class="temp-back">
                 <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
                 <h4><b>Practical Learning</b></h4>
@@ -1294,7 +1320,7 @@ img {
                 </a>
             </div>
         </div>
-        <div class="template-1">
+        <div class="template-1" style="background-color: #4A90E2;">
             <div class="temp-back">
                 <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
                 <h4><b>Industry Collaboration</b></h4>
@@ -1371,20 +1397,20 @@ img {
     <p><h3 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">About Us</h3></p>
 
    
-<p><h2>Building a Lifelong Learning <br> and Thriving Community</h2></p>
+<p><h2 style="color:orangered;">Building a Lifelong Learning <br> and Thriving Community</h2></p>
 <p><h5>Birat Multiple College is dedicated to nurturing talents, fostering innovation, and creating a supportive environment where students and educators thrive together.</h5></p>
 
     <div class="div1">
         <div class="container2">
             <i class="fa-solid fa-graduation-cap"></i>
-            <div class="text-portion">
+            <div class="text-portion" style="cursor: pointer;">
                 <p1><h4>Mission</h4></p1>
-                <p2><h5>Our mission is to foster academic excellence and ethical values, preparing students to excel in their chosen fields.</h5></p2>
+                <p2><h5 >Our mission is to foster academic excellence and ethical values, preparing students to excel in their chosen fields.</h5></p2>
                 
             </div>
         </div>
-        <div class="container2">
-            <i class="fa-solid fa-graduation-cap"></i>
+        <div class="container2" style="cursor: pointer;">
+            <i class="fa-solid fa-graduation-cap" ></i>
             <div class="text-portion">
                 <p1><h4>Vision</h4></p1>
 <p2><h5>Birat Multiple College aims to provide quality education and holistic development to empower students for a brighter future.</h5></p2>
@@ -1516,48 +1542,165 @@ img {
     color: #4A90E2; /* Highlight text on hover */
 }
 
-
-
-
 </style>
+<div class="testimonal" style="overflow: hidden;">
+    <p><h3>Testimonal</h3></p>
+    <p><h2>What Our Student Feedback</h2></p>
+    <div class="box-container">
+        <div class="container">
+            <div class="wrapper">
+                <div class="slider-content">
+                    <!-- Testimonial 1 -->
+                    <div class="test-box">
+                        <img class="image-right" src="image/image1.jpg" alt="Testimonial Image">
+                        <p><h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus, libero tenetur? Non est ex repellat dolores ipsam, impedit optio numquam?</h4></p>
+                        <div class="test-content">
+                            <div class="pg">
+                                <p><h3>Sumit Majhi</h3></p>
+                                <p><h4>Er. At NTC</h4></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="test-box">
+                        <img class="image-right" src="image/image-2.jpg" alt="Testimonial Image">
+                        <p><h4>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4></p>
+                        <div class="test-content">
+                            <div class="pg">
+                                <p><h3>Sumit Sitaula</h3></p>
+                                <p><h4>Manager NBR</h4></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="test-box">
+                        <img class="image-right" src="image/image-3.jpg" alt="Testimonial Image">
+                        <p><h4>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</h4></p>
+                        <div class="test-content">
+                            <div class="pg">
+                                <p><h3>divya Jha</h3></p>
+                                <p><h4>Lecturer, IOE</h4></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-  <!--account portion starts here-->
-  <div class="account ">
-    <div class="create">
-        <p><h2>Create Your Free Account</h2></p>
-        <div class="info">
-            <p><h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex corporis, et molestiae vero consequuntur odio.</h4></p>
-        </div>
-        <a href="#" class=""><p><h4 class="button-hover">Join Now</h4></p></a>
-    </div>
-    <div class="time">
-        <p class="time-content"><h3>Register Now and<br>Get a <span class="orr">50% Discount</span></h3></p>
-    </div>
-</div>
-<div class="team ">
-    <p><h3>Team Member</h3></p>
-    <p><h2>Meet Our Professional Team Members</h2></p>
-    <div class="team-info">
-        <div class="team1">
-            <img src="image/image1.jpg" alt="">
-            <div class="col"></div>
-        </div>
-        <div class="team1">
-            <img src="image/image1.jpg" alt="">
-            <div class="col"></div>
-        </div>
-        <div class="team1">
-            <img src="image/image1.jpg" alt="">
-            <div class="col"></div>
-        </div>
-    </div>
-</div>
+<style>
+
+.testimonal {
+    padding-top: 7vw;
+    text-align: center;
+    background-color: #f3f1f3;
+    padding-bottom: 10vw;
+    overflow: hidden;
+    max-width: 100%;
+    background-image: 
+        linear-gradient(
+            rgba(255, 255, 255, 0.5), /* Light white with 50% opacity */
+            rgba(255, 255, 255, 0.2)  /* Even more transparent white */
+        ),
+        url('image/testimonialbg.png'); /* Optional image */
+    background-size: cover; /* Ensure the image covers the entire background */
+}
+
+.testimonal h3{
+    color: #4f5de4;
+}
+.testimonal h2{
+    color: #2a254d;
+    padding-bottom: 10vw;
+}
+.box-container{
+    margin-left: 8vw;
+    max-width: 80vw;
+    overflow: hidden;
+    border: solid 1px rgb(177, 177, 177);
+    height: fit-content;
+    background-color: rgb(247, 245, 245);
+    border-radius: 30px;
+}
+.container{
+    width: 50vw;
+   
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.test-box{
+    text-align: left;
+    width: 50vw;
+    padding: 120px 70px 0px 70px;
+    align-content: center;
+    margin-left: -150px;
+}
+.test-box h4{
+    color: rgb(102, 102, 102);
+    font-weight: 400;
+    margin-top: 20px;
+    line-height: 28px;
+}
+.test-box h3{
+    color: #2a254d;
+    
+}
+.test-content{
+    margin-top: 30px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    gap: 370px;
+    margin-bottom: 40px;
+}
+.arrow a{
+    color: #4f5de4;
+    padding: 15px 20px;
+    background-color: #dad9da;
+    border-radius: 50%;
+}
+.a-left{
+    margin-right: 15px;
+}
+.test-box .image-top{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: -170px;
+    z-index: 12;
+    border: 5px solid #f8f7f8;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.pg h4{
+    margin-top: 0px;
+}
+.image-right{
+    position: absolute;
+    width: 35vw;
+    height: 35vw;
+    border-radius: 50%;
+    right: 10px;
+    margin-top: -280px;
+    border: 5px solid #f8f7f8;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    overflow: auto;
+}
+
+
+    </style>
+
+
 <div class="blog ">
     <p><h3>Latest Blog</h3></p>
     <p><h2>Latest Updates & Articles</h2></p>
     <div class="blog-container">
         <div class="blog-1">
-            <img src="image/image1.jpg" alt="">
+            <img src="image/image-2.jpg" alt="">
             <div class="blog-text">
                 <p><h5>Development</h5></p>
                 <p><h2>The Complete Web Developer Guideline 2023</h2></p>
@@ -1574,12 +1717,12 @@ img {
             </div>
         </div>
         <div class="blog-2">
-            <img src="image/image1.jpg" alt="">
+            <img src="image/image-3.jpg" alt="">
             <div class="blog-text">
                 <p><h5>Development</h5></p>
                 <p><h2>The Complete Web Developer Guideline 2023</h2></p>
                <div class="flex-info">
-                    <img src="image/image1.jpg" alt="">
+                    <img src="image/image-2.jpg" alt="">
                 <div class="s1">
                     <p><h4>Chris Woaks</h4></p>
                     <p><h5>FRONTEND DEVELOPER</h5></p>
@@ -1654,7 +1797,7 @@ img {
                 <p><a class="i1" href="">Blog & News</a></p>
                 <p><a class="i1" href="">FAQ Questions</a></p>
                 <p><a class="i1" href="">Testimonial</a></p>
-                <p><a class="i1" href="">Privacy Policy</a></p>
+               
             </div>
         </div>
     </div>
@@ -1662,21 +1805,21 @@ img {
     <div class="contact-us">
         <p><h3>Contact Us</h3></p>
         <div class="contact-content">
-            <i class="fa-solid fa-location-dot"></i>
+            <i class="fa-solid fa-location-dot" style="margin-top: -50px;"></i>
             <h4><p>Biratnagar-02, Rajbanshi Chock</p></h4>
         </div>
         <div class="contact-content">
-            <i class="fa-solid fa-phone"></i>
+            <i class="fa-solid fa-phone" style="margin-top: -20px;"></i>
             <h4><p>+977 - 9805996874</p></h4>
         </div>
-        <div class="contact-content">
-            <i class="fa-solid fa-envelope"></i>
+        <div class="contact-content" >
+            <i class="fa-solid fa-envelope" style="margin-top: -24px;"></i>
             <h4><p>bmc@gmail.com</p></h4>
         </div>
         <div class="subscribe">
             <form action="#">
                 <input type="email" placeholder="Enter your email" required>
-                <button type="submit" class="button-hover">Subscribe</button>
+                <button type="submit" class="button-hover" style="width: 100px; height: 32px; text-align: center; font-size: 12px;">Subscribe</button>
             </form>
         </div>
     </div>
@@ -1979,7 +2122,51 @@ sections.forEach(section => {
 
 </script>
 
+<script>
+    // Adding hover effect for scaling
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            item.style.transform = 'scale(1.1)';
+        });
+        item.addEventListener('mouseleave', () => {
+            item.style.transform = 'scale(1)';
+        });
+    });
+</script>
 
+<script>
+    let testimonialIndex = 0; // Current slider index
+    const testimonials = document.querySelectorAll('.test-box'); // Select all testimonials
+    const images = document.querySelectorAll('.image-right'); // Select all right-side images
+    const sliderInterval = 3000; // Time in milliseconds for each slide
+    
+    function showTestimonial(index) {
+        testimonials.forEach((testimonial, i) => {
+            if (i === index) {
+                testimonial.style.display = 'block'; // Show the current testimonial
+                testimonial.style.opacity = 1; // Make it visible
+                images[i].style.display = 'block'; // Show the current image
+            } else {
+                testimonial.style.display = 'none'; // Hide others
+                testimonial.style.opacity = 0; // Make them invisible
+                images[i].style.display = 'none'; // Hide the image
+            }
+        });
+    }
+    
+    function startSlider() {
+        showTestimonial(testimonialIndex);
+        setInterval(() => {
+            testimonialIndex = (testimonialIndex + 1) % testimonials.length; // Loop through the testimonials
+            showTestimonial(testimonialIndex);
+        }, sliderInterval);
+    }
+    
+    // Start the slider
+    window.onload = startSlider;
+    
+</script>
 
 
 
