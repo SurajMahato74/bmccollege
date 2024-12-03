@@ -1039,6 +1039,7 @@ img {
     }
 }
 
+
 </style>
     
  <!--course starts here-->
@@ -1144,7 +1145,7 @@ img {
 
 <div>
     <p> <h1 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">
-        Explore Our Wide Ranges of Courses
+        BMC Highlights <span style="color: orangered;">!</span>
     </h1></p>
 </div>
 <div style="font-family: 'Roboto', sans-serif; margin-bottom: 50px; margin-top: -30px; padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #ffffff;">
@@ -1254,7 +1255,11 @@ img {
 </style>
 
 
-
+<div style="margin-bottom: 100px;">
+    <p> <h1 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">
+        Why BMC <span style="color: orangered;"> ?</span>
+    </h1></p>
+</div>
 
 <!--About Us starts here-->
 <div class="about-us" style="margin-top: -50px;">
@@ -1301,6 +1306,55 @@ img {
         </div>
     </div>
 </div>
+
+<style>
+    /* Define the growing effect animation */
+@keyframes growEffect {
+    0% {
+        transform: scaleY(0.5); /* Initially scaled down vertically */
+        opacity: 0; /* Initially invisible */
+    }
+    100% {
+        transform: scaleY(1); /* Full size */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Add initial styles to the .template-1 boxes */
+.template-1 {
+    transition: transform 1s ease, opacity 1s ease;
+    transform: scaleY(0.5); /* Initially scaled down */
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Start hidden */
+}
+
+/* When the element is in the viewport, we trigger the animation */
+.template-1.active {
+    animation: growEffect 1s forwards; /* Apply grow animation */
+    visibility: visible; /* Make it visible once the animation is triggered */
+}
+
+/* Optional: Add styles for the container and general layout */
+.about-us {
+    padding: 50px 0;
+}
+
+.templates {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.template-1 {
+    flex: 1 1 22%; /* Adjust the width of each box */
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+</style>
 
 <!--about us content starts here-->
 <div class="aboutus-content d">
@@ -1740,10 +1794,33 @@ setInterval(() => {
 
     // Initialize the carousel
     carouselSlides[currentCarouselIndex].classList.add("active");
-    setInterval(showNextCarouselSlide, 2500); // 2.5 seconds
+    setInterval(showNextCarouselSlide, 3000); // 2.5 seconds
 </script>
 
+<script>
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return rect.top <= window.innerHeight && rect.bottom >= 0;
+}
 
+// Get all the elements to animate
+const elements = document.querySelectorAll('.template-1');
+
+// Listen to scroll events
+window.addEventListener('scroll', () => {
+    elements.forEach(element => {
+        if (isInViewport(element)) {
+            element.classList.add('active'); // Add class to trigger animation
+        } else {
+            element.classList.remove('active'); // Remove class to reset animation
+        }
+    });
+});
+
+// Trigger scroll event to check for elements already in viewport when page loads
+window.dispatchEvent(new Event('scroll'));
+</script>
 
 
 
