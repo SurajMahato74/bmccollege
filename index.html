@@ -1378,9 +1378,29 @@ img {
         </div>
     </div>
 </div>
-<div class="foot ">
+
+<style>
+    .foot {
+  width: 100%; /* Ensures it spans the full width of the screen */
+  height: auto; /* Adjust height as needed */
+  background-size: cover; /* Makes the image cover the container */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Avoids repeating the image */
+  margin-top: -30px;
+}
+
+@media (max-width: 768px) {
+  .foot {
+    width: 100vw; /* 100% of the viewport width */
+    margin-top: -50px;
+  }
+}
+
+</style>
+<div class="foot" style="position: relative; background-image: url('image/bmcbuilding.jpg'); background-size: cover; background-position: center;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(11, 1, 56, 0.8);"></div>
     <div class="eduact">
-        <a href=""><h2>eduACT</h2></a>
+        <a href=""><h2>Birat Multiple Campus</h2></a>
         <p><h4>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</h4></p>
         <div class="links">
             <a href=""><i class="fa-brands fa-facebook-f"></i></a>
@@ -1418,15 +1438,15 @@ img {
         <p><h3>Contact Us</h3></p>
         <div class="contact-content">
             <i class="fa-solid fa-location-dot"></i>
-            <h4><p>6391 Elgin St. Celina</p></h4>
+            <h4><p>Biratnagr-02, Rajbanshi Chock</p></h4>
         </div>
         <div class="contact-content">
             <i class="fa-solid fa-phone"></i>
-            <h4><p>6391 Elgin St. Celina</p></h4>
+            <h4><p>+977 - 9805996874</p></h4>
         </div>
         <div class="contact-content">
             <i class="fa-solid fa-envelope"></i>
-            <h4><p>6391 Elgin St. Celina</p></h4>
+            <h4><p>bmc@gmail.com</p></h4>
         </div>
         <div class="subscribe">
             <form action="#">
