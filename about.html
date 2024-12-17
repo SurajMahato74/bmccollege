@@ -14,7 +14,7 @@
     rel="stylesheet"
   />
   <!-- Alternate PNG format -->
-  <title>Birat Multiple College</title>
+  <title>About Birat Multiple College</title>
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +24,20 @@
       
       <meta name="description" content="Welcome to Birat Multiple College, where we offer bachelor's degrees in BSc CSIT, Food Technology, and Microbiology in Biratnagar.">
       
+
+      
     <style>
-    .landingpage {
+                *{
+            margin: 0px;
+            padding: 0px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 550;
+        }
+        body{
+            max-width: 100vw;
+            overflow-x:hidden;
+        }
+      .landingpage {
   font-family: 'Poppins', sans-serif;
   background-color: rgba(56, 1, 63, 0.7); /* Backup color for older browsers */
   position: relative; /* Establish a positioning context for the video */
@@ -34,17 +46,19 @@
   height: 100vh;
   padding: 0;
   overflow: hidden;
+  background-color: white;
 }
 
-.background-video {
+.back-img-1{
   position: absolute;
   top: 0;
   left: 0;
   overflow-x: hidden;
   width: 100%;
-  height: 100vh;
-  object-fit: cover; /* Ensure the video covers the entire background */
-  z-index: -1; /* Place the video behind content */
+  height:70vh;
+ 
+  z-index: -2; /* Place the video behind content */
+  opacity: 0.7; 
 }
 
 .overlay {
@@ -52,8 +66,17 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  background-color: rgba(56, 1, 63, 0.7); /* Overlay color with transparency */
+  height: 100%;
+  background-color: rgba(5, 0, 29, 0.8);  /* Overlay color with transparency */
+  z-index: -1; /* Place above the video but below the content */
+}
+.overlay-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: rgba(5, 0, 29, 0.7); /* Overlay color with transparency */
   z-index: -1; /* Place above the video but below the content */
 }
 
@@ -800,125 +823,81 @@
         cursor: pointer;
     }
 }
-
     </style>
-
-
 </head>
 <body>
 
-
-    
-    <style>
-        /* Overlay (background when popup is active) */
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0.3s, opacity 0.3s;
-        }
-
-        .popup-overlay.active {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        /* Popup container */
-        .popup-content {
-            position: relative;
-            width: 495px; /* A4 width in pixels */
-            height: 580px; /* A4 height in pixels */
-            background: #fff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .popup-content img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Close button */
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: red;
-            color: #fff;
-            font-size: 18px;
-            font-weight: bold;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .close-btn:hover {
-            background: darkred;
-        }
-
-        /* Optional: Prevent scrolling when popup is active */
-        body.no-scroll {
-            overflow: hidden;
-        }
-    </style>
-
-    <!-- Popup overlay -->
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-content">
-            <span class="close-btn" id="closeBtn">&times;</span>
-            <img src="image/udated_letter.jpg" alt="Notice Image">
-        </div>
+    <!-- Preloader -->
+<div id="preloader">
+    <div class="loader-logo">
+        <img src="logo.png" alt="Logo" id="animated-logo">
     </div>
+</div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const popupOverlay = document.getElementById("popupOverlay");
-            const closeBtn = document.getElementById("closeBtn");
-    
-            // Show the popup only on the first visit
-            if (!sessionStorage.getItem("popupShown")) {
-                popupOverlay.classList.add("active");
-                document.body.classList.add("no-scroll");
-                sessionStorage.setItem("popupShown", "true");
-    
-                // Auto-dismiss the popup after 3 seconds
-                setTimeout(() => {
-                    popupOverlay.classList.remove("active");
-                    document.body.classList.remove("no-scroll");
-                }, 3000);
-            }
-    
-            // Close the popup on button click
-            closeBtn.addEventListener("click", () => {
-                popupOverlay.classList.remove("active");
-                document.body.classList.remove("no-scroll");
-            });
-        });
-    </script>
-    
+<style>
+    /* Preloader Fullscreen Container */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff; /* White background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* High z-index to stay on top */
+}
 
+/* Centered Loader Logo */
+.loader-logo img {
+    width: 150px; /* Adjust the size of your logo */
+    height: auto;
+    animation: shine 2s infinite alternate;
+}
 
+/* Animation: Shine Effect */
+@keyframes shine {
+    0% {
+        opacity: 0.5;
+        filter: brightness(1);
+    }
+    100% {
+        opacity: 1;
+        filter: brightness(1.5);
+    }
+}
 
-    <div class="landingpage">
-        <video autoplay muted loop class="background-video">
-            <source src="bmcintro.mp4" type="video/mp4">
-        </video>
-        <div class="overlay"></div>
+/* Hide content initially */
+#content {
+    display: none;
+}
+
+</style>
+<!-- Main Content -->
+<div id="content" style="display: none;">
+    
+        <div class="landingpage">
+            <div class="image">
+                <div class="overlay-image"></div>
+                <img class="back-img-1" src="image/bmcbuilding.jpg" alt="">
+                <div class="centered-text">About Us</div>
+            </div>
+
+            <style>
+                .centered-text {
+    position: absolute;
+    top: 50%; /* Move to center vertically */
+    left: 50%; /* Move to center horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    color: white; /* Text color */
+    font-size: 2rem; /* Adjust text size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center;
+    z-index: 2; /* Ensure text is above the image */
+}
+            </style>
+        
     
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg">
@@ -926,7 +905,7 @@
                 <!-- Left side: Logo and college name -->
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <div class="logo-circle">
-                        <img alt="bmc logo" src="logo.png" />
+                        <img alt="eduAct logo" src="logo.png" />
                     </div>
                     <div class="college-name ms-2">
                         <span class="college-line-1">Birat</span><br />
@@ -968,6 +947,140 @@
                 </ul>
             </div>
         </nav>
+
+        <style>
+            .circ-icons1{
+                position: absolute;
+               display: flex;
+               margin-top: 51vh; 
+               margin-left: -60px;
+            }
+            .circ-icons2{
+                position: absolute;
+               display: flex;
+               margin-top: 53vh; 
+            }
+            .circ-icons1 .i1{
+                color: rgb(255, 255, 255);
+                font-size: 120px; 
+            }
+            .circ-icons2 .i2{
+                color: rgb(255, 255, 255);
+                font-size: 120px; 
+            }
+        </style>
+        <div class="circ-icons1">
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            
+        </div>
+        <div class="circ-icons2">
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+        </div>
+    </div>     
+<style>
+    .background-circles {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      overflow: hidden;
+    }
+    .logo-circle {
+      width: 80px;              /* Size of the circle */
+      height: 80px;
+      background: transparent;        /* Background color of the circle */
+      border-radius: 50%;       /* Makes the shape circular */
+      display: flex;    
+      justify-content: center;  /* Center the logo inside the circle */
+      align-items: center;
+     
+      overflow: hidden;         /* Ensure the image stays inside the circle */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    }
+    .logo-circle:hover {
+      transform: scale(1.1); /* Slight zoom effect on hover */
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35), 
+                  inset 0 3px 5px rgba(255, 255, 255, 0.7); /* Enhanced 3D effect */
+    }
+    .logo-circle img {
+      width: 100%;            /* Ensure the image fills the circle */
+      height: 100%;
+      object-fit: cover;      /* Prevent distortion of the image */
+      transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+    }
+    
+    .logo-circle:hover img {
+      transform: scale(1.2); /* Zoom effect on the image */
+    }
+    
+    
+    
+    .floating-icons {
+      position: fixed;            /* Keeps the icons fixed on the screen */
+      bottom: 20px;               /* Distance from the bottom */
+      right: 20px;                /* Distance from the right */
+      display: flex;
+      flex-direction: column;     /* Stack the icons vertically */
+      gap: 10px;                  /* Space between the icons */
+      z-index: 9999;              /* Ensures they appear above all other elements */
+    }
+    
+    .icon {
+      width: 35px;                /* Size of the icon container */
+      height: 35px;
+      background: white;          /* Background color */
+      border-radius: 50%;         /* Makes the container circular */
+      display: flex;              /* Centers the image */
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for visibility */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    }
+    
+    .icon img {
+      width: 60%;                 /* Resizes the icon to fit within the circle */
+      height: 60%;
+    }
+    
+    .icon:hover {
+      transform: scale(1.1);      /* Slight zoom effect on hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    }
+    
+    .icon.whatsapp {
+      background-color: #25d366;  /* WhatsApp green background */
+    }
+    
+    .icon.facebook {
+      background-color: #1877f2;  /* Facebook blue background */
+    }
+</style>
     
     
 <!-- Sidebar -->
@@ -989,7 +1102,7 @@
             <h2 class="nav-title">LIFESTYLE <span class="toggle-icon">+</span></h2>
             <ul class="nav-links">
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="blog.html">News & Events</a></li>
+                <li><a href="news.html">News & Events</a></li>
             </ul>
             <hr>
         </div>
@@ -1007,38 +1120,14 @@
             <ul class="nav-links">
                 <li><a href="notice.html">Notice</a></li>
                 <li><a href="admission.html">Admission</a></li>
-                
+               
             </ul>
             <hr>
         </div>
     </div>
 </div>
-
-
-          <div class="header-content">
-            <div class="custom-carousel">
-              <div class="carousel-slides">
-                <div class="slide active">
-                  <h1 style="color: white;">A Better Learning Journey Future Starts Here</h1>
-                  <a class="btn-custom" href="admission.html">Enroll Now</a>
-                </div>
-                <div class="slide">
-                  <h1 style="color: white;">Explore Our Courses</h1>
-                  <a class="btn-custom" href="courses.html">Our Courses</a>
-                </div>
-                <div class="slide">
-                  <h1 style="color: white;">Explore Birat Multiple College</h1>
-                  <a class="btn-custom" href="about-us.html">Explore Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          
-    
-      </div>
-        </div>
-    </div>
+</div>
+</div>
 </div>
 <div class="top-nav" style="background-color: #2a254d; font-weight: 10; color: white; font-style: normal; font-size: 14px;">
     <div class="nav-links">
@@ -1078,841 +1167,812 @@
         <a href="about.html" class="nav-item" style="text-decoration: none; transition: transform 0.3s; display: inline-block;">ABOUT US</a>
         <a href="contact.html" class="nav-item" style="text-decoration: none; transition: transform 0.3s; display: inline-block;">CONTACT US</a>
     </nav>
-    
-   
-    
-    
     <a class="nav-link" href="#" onclick="toggleSidebar()">
         <i class="fas fa-bars" style="color: blue;"></i>
     </a>
 </div>
 
 
-
-
-
-
-<div class="main-content" style="margin-top: -140px;">
-
+<div> 
 <style>
-    .course {
-    height: auto; /* Let the container adjust to its content */
-    overflow: hidden; /* Prevent unintended scrolling */
-    margin: 0 auto; /* Center the container if needed */
-}
-
-.course-box {
-    display: flex; /* Use flex layout to align child boxes horizontally */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    gap: 50px; /* Add spacing between boxes */
-    justify-content: center; /* Center align the course boxes */
-    overflow: hidden;
-}
-
-.course-template {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    height: auto; /* Adjust height dynamically */
-    width: 325px; /* Adjust width to suit the design */
-    box-sizing: border-box; /* Include padding and border in width/height */
-    padding: 10px;
-    margin-bottom: 20px; /* Add spacing between rows */
-    background-color: #fff; /* Optional for better design */
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional for better aesthetics */
-    overflow: hidden;
-}
-
-.temp {
-    flex: 1; /* Let content inside expand naturally */
-    text-align: center;
-}
-
-.circ2 {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    overflow: hidden;
-}
-
-img {
-    max-width: 100%;
-    height: auto; /* Ensure images scale properly */
-    border-radius: 10px; /* Optional for aesthetic design */
-    overflow: hidden;
-}
-
-/* For responsiveness on mobile screens */
-@media (max-width: 768px) {
-    .course-box {
-        flex-direction: column; /* Stack courses vertically on smaller screens */
-        align-items: center; /* Center align the courses */
-        overflow: hidden;
+    h1{
+        font-size: 2.5rem;
+    }
+    h2{
+        font-size: 2rem;
+    }
+    h3{
+        font-size: 1.5rem;
+    }
+    h4{
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.4rem;
+    }
+    h5{
+        font-size: 0.8rem;
+    }
+    or{
+        color: rgb(199, 169, 0);
+    }
+    .intro{
+        padding: 8vw 8vw 0vw 8vw;
+    }
+    .intro h1{
+        margin-top: 2vw;
+        width: 40vw;
+    }
+    .intro h1{
+        color: rgb(43, 49, 139);
+        font-weight: 500;
+    }
+    .history{
+        margin: 2vw 16vw;
+        border-left: solid 4px rgb(43, 49, 139);
+        padding: 1vw 3vw;
+        display: flex;
+        flex-direction:column;
+    }
+    .history h3{
+        padding: 5px 10px;
+        background-color: rgb(43, 49, 139) ;
+        width: fit-content;
+        color: white;
+        border-radius: 0px;
+        margin: 2vw 0vw;
+        font-weight: 550;
+    }
+    h4{
+        font-weight: 400;
+        color: rgb(75, 75, 75);
+    }
+    .history img{
+        max-width: 100%;
+        margin: 2vw 0vw;
+        height: 40vw;
+    }
+    .history2 img{
+        width: 100%;
+    }
+    .history3 img{
+        width: 100%;
+    }
+    .download{
+        text-decoration: none;
+        padding: 7px 30px;
+        background-color: rgb(43, 49, 139) ;
+        color: white;
+        margin-left: 15.8vw;
+        font-weight: 450;
+        border-radius: 4px;
+        width: fit-content;
     }
 
-    .course-template {
-        width: 90%; /* Take up most of the screen width */
-        overflow: hidden;
+    @media(max-width:550px){
+        h1{
+        font-size: 1.8rem;
     }
-}
+    h2{
+        font-size: 1.6rem;
+    }
+    h3{
+        font-size: 1.2rem;
+    }
+    h4{
+        font-size: 0.8rem;
+    }
+        .intro{
+        padding: 4vw 4vw 0vw 4vw;
+    }
+    .intro h1{
+        margin-top: 5vw;
+        width: 92vw;
+    }
+
+    .history{
+        margin: 4vw 4vw 4vw 4vw;
+        margin-right: 2vw;
+        border-left: solid 2px rgb(43, 49, 139);
+        padding: 1vw 4vw;
+        display: flex;
+        flex-direction:column;
+        gap: 4vw;
+        width:90vw;
+    }
+    .history h3{
+        padding: 5px 10px;
+        background-color: rgb(43, 49, 139) ;
+        width: fit-content;
+        color: white;
+        border-radius: 0px;
+        margin: 5vw 0vw;
+    }
+    .history h4{
+        font-weight: 500;
+        color: rgb(75, 75, 75);
+    }
+    .history img{
+        max-width: 100%;
+        margin: 3vw 0vw;
+        height: 50vw;
+
+    }
+    .history2 img{
+        width: 100%;
+    }
+    .history3 img{
+        width: 100%;
+    }
+    .download{
+        text-decoration: none;
+        margin-top: 2vw;
+        padding: 7px 20px;
+        background-color: rgb(43, 49, 139) ;
+        color: white;
+        margin-left: 3vw;
+        font-weight: 450;
+        border-radius: 4px;
+        font-size: 16px;
+        width: fit-content;
+    }
+    }
 
 
+@media(max-width:1024px) and (min-width:550px){
+        .intro{
+        padding: 8vw 8vw 0vw 8vw;
+    }
+    .intro h1{
+        margin-top: 3vw;
+        width: 80vw;
+    }
+    .history{
+        margin: 2vw 10vw;
+        border-left: solid 4px rgb(43, 49, 139);
+        padding: 1vw 3vw;
+        display: flex;
+        flex-direction:column;
+        width: 80vw;
+    }
+    .history h3{
+        padding: 5px 10px;
+        background-color: rgb(43, 49, 139) ;
+        width: fit-content;
+        color: white;
+        border-radius: 0px;
+        margin: 2vw 0vw;
+        font-weight: 550;
+    }
+    .history h4{
+        font-weight: 500;
+        color: rgb(75, 75, 75);
+    }
+    .history img{
+        max-width: 80%;
+        margin: 2vw 0vw;
+        height: 40vw;
+    }
+    .download{
+        text-decoration: none;
+        margin-top: 2vw;
+        padding: 7px 20px;
+        background-color: rgb(43, 49, 139) ;
+        color: white;
+        margin-left: 10vw;
+        font-weight: 450;
+        border-radius: 4px;
+        font-size: 16px;
+        width: fit-content;
+    }
+    }
+    
 </style>
+<div class="about-us" style="margin-top: -170px;">
+    <div class="intro shift-top">
+        <h3>OUR <or>STORY</or></h3>
+        <h1>Founded in 1997, Birat Multiple College is a renowned institution offering diverse academic programs in Biratnaagr.</h1>
+    </div>
+    <div class="history shift-bottom">
+        <div class="history1">
+            <h3 class="shift-bottom">1997</h3>
+            <h4 class="shift-bottom">"Established in 1997 in the vibrant city of Biratnagar, Birat Multiple College began its journey under the Arniko Foundation with a commitment to providing quality education. Offering diverse programs in Microbiology, BSc CSE IT, and Food Technology, the college is affiliated with Tribhuvan University and has grown to become a center of academic excellence, nurturing students for success in their chosen fields."
+            </h4>
+            <img class="shift-right" src="image/bmcbuilding.jpg" alt="">
+        </div>
+        <div class="history2">
+            <h3 class="shift-bottom">Now</h3>
+            <h4 class="shift-bottom">"Birat Multiple College, is now a thriving institution in Biratnagar, offering specialized programs in Microbiology, BSc CSE IT, and Food Technology. Affiliated with Tribhuvan University and operating under the Arniko Foundation, the college has continually expanded its resources and infrastructure to provide a modern and comprehensive learning environment. As our student body grows, we remain committed to fostering academic excellence and preparing students for success in their careers."
+            <img class="shift-right" src="image/bmc2.png" alt="">
+        </div>
+   
+    </div>
+    <h3><a class="download shift-right" href="">DOWNLOAD OUR BROCHURE</a></h3>
+    <style>
+        .our-campus{
+            padding: 8vw 16vw 1vw 16vw;
+            max-width: 100vw;
+        }
+        .our-campus h4{
+            margin: 2vw 0vw;
+            font-weight: 400;
+        color: rgb(75, 75, 75);
+        }
+        .image-section{
+        display: flex;
+        flex-direction: row;
+        gap: 4%;
+        }
+        .image-section img{
+            width: 48%;
+        margin: 3vw 0vw;
+        height: 22vw;
+    }
     
- <!--course starts here-->
-<div class="course " style="height:fit-content;">
-    <p> <h1 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">
-        Explore Our Wide Ranges of Courses
-    </h1></p>
-    
-    <div class="course-box">     
-        <div class="course-template box1" style="background-color: #4A90E2; border-top-left-radius: 15px; border-bottom-right-radius: 15px;">
-            <div class="circ2">
-                <a href="#"><i class="fa-solid fa-heart"></i></a>
-            </div>
-            <a href="bit.html">
-            <img src="image/itstudent.jpeg" alt="">
-            <div class="temp">
-                <p><h5>Bachelor Degree</h5></p>
-                <div class="stars">
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange"></i>
-                    <i class="fa-solid fa-star"></i>   
-                </div>
-                <p1>Bsc. CSE IT</p1>
-                <div class="price-box">
-                    <div class="mentor-info">
-                        <p><h4>Ram Sharma</h4></p>
-                        <p><h5>HOD IT department</h5></p>
-                    </div>
-                    <div class="price-info">
-                        <p><h3>4 years </h3></p>
-                        <p><h4>TU Affilated</h4></p>
-                    </div>
-                </div>
-            </div>
-            </a>
+.our-campus h4{
+    margin: 1vw 0vw;
+}
+.our-campus a{
+    text-decoration: none;
+    font-weight: 500;
+}
+.our-campus a h4{
+    width: fit-content;
+    text-decoration: none;
+    margin: 1vw ;
+    border-bottom: 1px solid;
+    font-weight: 400;
+    color: green;
+}
+    @media(max-width:550px){
+        .our-campus{
+            padding: 8vw 4vw;
+            max-width: 100vw;
+        }
+        .our-campus h4{
+            margin: 2vw 0vw;
+            font-weight: 500;
+        color: rgb(75, 75, 75);
+        }
+        .image-section{
+        display: flex;
+        flex-direction: column;
+        gap: 8%;
+        }
+        .image-section img{
+            width: 100%;
+        margin: 3vw 0vw;
+        height: auto;
+    }
+    }
+    @media(max-width:1024px) and (min-width:550px){
+        .our-campus{
+            padding: 8vw 10vw;
+            max-width: 100vw;
+        }
+        .our-campus h4{
+            margin: 2vw 0vw;
+            font-weight: 400;
+        color: rgb(75, 75, 75);
+        }
+        .image-section{
+        display: flex;
+        flex-direction: row;
+        gap: 2%;
+        }
+        .image-section img{
+            width: 48%;
+        margin: 3vw 0vw;
+        height: auto;
+    }
+    }
+    </style>
+    <div class="our-campus">
+        <h2 class="shift-top">OUR <or>CAMPUS</or></h2>
+        <h4 class="shift-top">At Birat Multiple College, we provide a dynamic learning environment with state-of-the-art classrooms and well-equipped laboratories, ensuring students gain hands-on, job-oriented experience. Our comprehensive library offers a vast range of resources to support academic research and learning. Emphasizing practical, experience-based education, our faculty, with extensive industry expertise, guide students to develop the skills necessary for success in their careers.</h4>
+        <a  href="gallery.html"><h4 class="shift-left">View our gallery</h4></a>
+        <div class="image-section">
+            <img class="shift-left" src="image/bmc1.png" alt="">
+            <img class="shift-right" src="image/bmc4.png" alt="">
         </div>
-        <div class="course-template box2" style="background-color: #4A90E2; border-top-left-radius: 15px; border-bottom-right-radius: 15px;">
-            <div class="circ2">
-                <a href="#"><i class="fa-solid fa-heart"></i></a>
-            </div>
-            <a href="bim.html">
-            <img src="image/microbiology.jpg" alt="">
-            <div class="temp">
-                <p><h5>Bachelor Degree</h5></p>
-                <div class="stars">
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange"></i>
-                    <i class="fa-solid fa-star"></i>   
-                </div>
-                <p1>BSC. Microbiology</p1>
-                <div class="price-box">
-                    <div class="mentor-info">
-                        <p><h4>Anu ojha</h4></p>
-                        <p><h5>HOD Microbiology</h5></p>
-                    </div>
-                    <div class="price-info">
-                        <p><h3>4 Years</h3></p>
-                        <p><h4>TU Affilated</h4></p>
-                    </div>
-                </div>
-            </div>
-            </a>
-        </div>
-        <div class="course-template box3" style="background-color: #4A90E2; border-top-left-radius: 15px; border-bottom-right-radius: 15px;">
-            <div class="circ2">
-                <a href="#"><i class="fa-solid fa-heart"></i></a>
-            </div>
-            <a href="bft.html">
-            <img src="image/foodtech.jpeg" alt="">
-            <div class="temp">
-                <p><h5>Bachelor Degree</h5></p>
-                <div class="stars">
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange"></i>
-                    <i class="fa-solid fa-star"></i>   
-                </div>
-                <p1>BSC. Food Technology</p1>
-                <div class="price-box">
-                    <div class="mentor-info">
-                        <p><h4>Shyam Jha</h4></p>
-                        <p><h5>HOD Food Tech</h5></p>
-                    </div>
-                    <div class="price-info">
-                        <p><h3>4 Years</h3></p>
-                        <p><h4>Tu Affilated</h4></p>
-                    </div>
-                </div>
-            </div>
-            </a>
-        </div>
+    </div>
+
+
+    <style>
+
+         .faculty h1{
+              color: rgb(43, 49, 139);
+              font-weight: 500;
+         }
+         .faculty h3{
+            margin: 1vw 0vw;
+         }
+         .faculty h1{
+            margin-bottom: 2vw ;
+            font-weight: 500;
+         }
+         .faculty{
+            padding:2vw 8vw;
+            display: flex;
+            flex-direction: row;
+            gap: 2%;
+         }
+         .faculty .text-portion{
+           width: 48%;
+         }
+         .faculty img{
+            width: 48%;
+            height: auto;
+            margin-top: 2vw;
+         }
+         .text-portion h4{
+            margin-bottom: 2vw;
+            font-weight: 400;
+        color: rgb(75, 75, 75);
+         }
+ @media(max-width:550px){
+            .faculty h3,h1{
+              color: rgb(43, 49, 139);
+         }
+         .faculty h3{
+            margin: 1vw 0vw;
+         }
+         .faculty h1{
+            margin-bottom: 2vw ;
+            font-weight: 400;
+         }
+         .faculty{
+            padding:2vw 8vw;
+            display: flex;
+            flex-direction: column;
+         }
+         .faculty .text-portion{
+           width: 100%;
+         }
+         .faculty img{
+            width: 100%;
+            height: auto;
+            margin-top: 2vw;
+         }
+         .text-portion h4{
+            margin-bottom: 2vw;
+            font-weight: 400;
+        color: rgb(75, 75, 75);
+         }
+    }
+    @media(max-width:1024px) and (min-width:550px){
+        .our-campus{
+            padding: 8vw 10vw;
+            max-width: 100vw;
+        }
+        
+    }
+    </style>
+
+    <div class="faculty">
        
+       <div class="text-portion shift-top">
+        <h3>Campus <or>Chief</or></h3>
+        <h4>U. Bilas Luitel</h4>
+        <h4>At Birat Multiple College, we recognize that academic success is only one aspect of a student’s journey. Our commitment to fostering wellbeing ensures that students develop resilience, emotional intelligence, and a strong sense of purpose, preparing them to navigate the complexities of life with confidence. We believe that by creating a balanced environment of support and challenge, we enable our students to excel not only in their studies but also in their personal growth and future endeavors.</h4>
+       </div>
+       <img class="shift-right" src="image/u-bilas.jpg" alt="">
     </div>
-</div>
+    <style>
+        .about-us-content{
+            padding-top: 10vw;
+            background-color: rgb(252, 252, 252);
+            display: flex;
+            padding: 0vw 8vw;
+            padding-bottom: 4vw;
+            margin-top: 5vw;
+            gap: 3vw;
+        }
+        .about-us-content h1{
+            font-weight: 500;
+            color: rgb(43, 49, 139);
+            font-weight: 500;
+        }
+        .about-us-content img{
+            position: absolute;
+            width: 22vw;
+            height: 30vw;
+            border: 10px solid white;
+            background-repeat: no-repeat;
+            object-fit: cover;
+            left:2vw;
+            z-index: 5;
+            border-radius:240px;
+            margin-top: 22vw;
+            margin-left: 3vw;
 
+        }
+        .about-us-content .img-content{
+            background-image:url(image/student-lab.jpg);
+            width: 37vw;
+            height: 50vw; 
+            border-radius:270px ;
+            background-repeat: no-repeat;
+            object-fit: cover;
+            margin-left: 5vw;
+            margin-top: 5vw;
+        }
+        .about-us-content .text-content{
+            width: 50vw;
+           margin-left: 0px;
+           margin-right: 0px;
+       
+        }
+       
+        .h4-about{
+            font-size: 14px;
+            line-height: 22px;
+            width: 90%;
+        }
+@media(max-width:550px){
+       .about-us-content{
+            margin-top: 5vh;
+            display: flex;
+            padding: 0vw 4vw;
+            gap: 5vw;
+            flex-direction: column;
+        }
+        .about-us-content .img-content{
+            position: relative;
+            width:100vw;
+            background-image:url(image/image-3.jpg);
+            height: 100vw; 
+            border-radius:50% ;
+            border: 10px solid white;
+            object-fit: cover;
+            margin-left: 60px;
+            margin-left: 12vw;
+        }
+        .about-us-content img{
+            position: absolute;
+            width: 42vw;
+            height: 42vw;
+            background-repeat: no-repeat;
+            object-fit: cover;
+            left:0vw;
+            margin-top:54vw;
+            z-index: 5;
+            border-radius:50%;
+        }
+        .about-us-content .text-content{
+           margin-left: 0px;
+           margin-top: 0px;
+           padding: 0vw 2vw;
+           width: 100%;
+       
+        }
+        .text-content .h3-about{
+            font-weight: 500;
+        }
+        .text-content .h2-about{
+            font-weight: 550;
+        }
+        
+}
 
+@media(max-width:770px ) and (min-width:550px){
 
+.about-us-content{
+            margin-top:5vh;
+            display: flex;
+            padding: 0vw 2vw;
+            gap: 5vw;
+            flex-direction: column-reverse;
+        }
+        .about-us-content .img-content{
+            position: relative;
+            width:100vw;
+            background-image:url(image/image-3.jpg);
+            height: 100vw; 
+            border-radius:50% ;
+            border: 10px solid white;
+            object-fit: cover;
+            margin-left: 60px;
+            margin-left: 12vw;
+        }
+        .about-us-content img{
+            position: absolute;
+            width: 42vw;
+            height: 42vw;
+          
+            background-repeat: no-repeat;
+            object-fit: cover;
+            left:0vw;
+            z-index: 5;
+            border-radius:50%;
+        }
+        .about-us-content .text-content{
+           margin-left: 0px;
+           margin-top: 0px;
+           padding: 0vw 2vw;
+           width: 100%;
+       
+        }
+        .text-content .h3-about{
+            font-weight: 500;
+        }
+        .text-content .h2-about{
+            font-weight: 550;
+        }
+    }  
+    @media(max-width:800px)  and (min-width:750px){
+        .text-content .h2-about{
+            font-weight: 550;
+            font-size: 32px;
+        }
+    }       
+@media(max-width:1025px)  and (min-width:770px){
 
-<div>
-    <p> <h1 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">
-        BMC Highlights <span style="color: orangered;">!</span>
-    </h1></p>
-</div>
-<div style="
-    font-family: 'Roboto', sans-serif; 
-    margin-bottom: 50px; 
-    margin-top: -100px; 
-    padding: 20px; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    min-height: 100vh; 
-    background-color: #ffffff; 
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('image/higlightbackground.png') no-repeat center center / cover;">
-   
-   <div id="carousel-container" style="text-align: center; max-width: 1100px; width: 100%; padding: 20px; 
+.about-us-content{
+            margin-top: 5vh;
+            margin-bottom: 8vw;
+            display: flex;
+            padding: 0vw 2vw;
+            gap: 0.2vw;
+            padding-bottom: 4vw;
+        }
+        .about-us-content .img-content{
+            position:relative;
+            width:45vw;
+            background-image:url(image/image-3.jpg);
+            height: 45vw; 
+            border-radius:50% ;
+            border: 10px solid white;
+            object-fit: cover;
+            margin-left: 0px;
+            margin-left: 0vw;
+        }
+        .about-us-content img{
+           position: absolute;
+            width: 25vw;
+            height: 25vw;
+            background-repeat: no-repeat;
+            object-fit: cover;
+            left:-10px;
+            margin-top: 27vw;
+            margin-left: -2vw;
+            z-index: 5;
+            border-radius:50%;
+        }
+        .about-us-content .text-content{
+           margin-left: 0px;
+           margin-right: 0px;
+           width: 51vw;
+       
+        }
+        .text-content .h3-about{
+            font-weight: 500;
+        }
+        .text-content .h2-about{
+            font-weight: 550;
+            font-size: 24px;
+        }
+        .h4-about{
+            font-size: 14px;
+            line-height: 22px;
+        }
+        .about-bmc-content p{
+            color: black;
+        }
+    }
+    #accordion{
+        width: 90%;
+        padding-left: 0px;
+    }
+    #accordion li{
+        list-style: none;
+        width: 100%;
+        margin-bottom: 30px;
+        padding: 10px;
+        border: solid 1px rgb(165, 165, 165);
+        background-color: rgb(247, 247, 247);
         border-radius: 10px; 
-        margin-top: 100px;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.7);">
+        transition: transform 1s cubic-bezier(0.1, 0.2, 0.1, 1);
+        box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    }
+    #accordion li:hover{
+        transform: scale(1.05);
+    }
+    #accordion li label{
+        color: #2a254d;
+        font-size: 26px;
+        font-weight: 550;
+        display: flex;
+        align-items: center;
+        align-content:space-between;
+        cursor: pointer;
+        padding: 5px 20px;
+        gap: 60%;
+    }
 
-        <div class="carousel-slide">
-            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: center;">
-                TRANSFORMING ACADEMIA
-            </h1>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 20px;">
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; 
-                    border-top-left-radius: 10px; 
-                    border-bottom-right-radius: 10px; 
-                    overflow: hidden;">
-                    <img alt="Image 1" src="https://storage.googleapis.com/a1aa/image/y4BfhslSyrWRDaiSEsPlUST660lglyi1Wpal9XMzJKLqgi7JA.jpg"
-                        style="width: 70%; height: auto;">
-                </div>
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; text-align: left;">
-                    <h2 style="font-size: 2em; font-weight: 700; margin: 0; text-align: center;">
-                        Teaching with Excellence
-                    </h2>
-                    <p style="font-size: 1em; margin: 10px 0;">
-                        Birat Multiple College adopts a unique and internationally applied teaching approach, LT-W.
-                    </p>
-                    <a href="#" style="font-size: 1em; font-weight: 700; color: #000000; text-decoration: none; border-bottom: 2px solid #4A90E2; padding-bottom: 2px;">
-                        LEARN MORE
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="carousel-slide">
-            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: center;">
-                INSPIRING INNOVATION
-            </h1>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 20px;">
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; 
-                    border-top-left-radius: 10px; 
-                    border-bottom-right-radius: 10px; 
-                    overflow: hidden;">
-                    <img alt="Image 2" src="image/image-3.jpg"
-                        style="width: 70%; height: auto;">
-                </div>
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; text-align: left;">
-                    <h2 style="font-size: 2em; font-weight: 700; margin: 0; text-align: center;">
-                        Empowering Students
-                    </h2>
-                    <p style="font-size: 1em; margin: 10px 0;">
-                        We focus on empowering students with skills and knowledge for a brighter future.
-                    </p>
-                    <a href="#" style="font-size: 1em; font-weight: 700; color: #000000; text-decoration: none; border-bottom: 2px solid #4A90E2; padding-bottom: 2px;">
-                        LEARN MORE
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="carousel-slide">
-            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: center;">
-                NURTURING LEADERS
-            </h1>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 20px;">
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; 
-                    border-top-left-radius: 10px; 
-                    border-bottom-right-radius: 10px; 
-                    overflow: hidden;">
-                    <img alt="Image 3" src="image/image-1.jpg"
-                        style="width: 70%; height: auto;">
-                </div>
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; text-align: left;">
-                    <h2 style="font-size: 2em; font-weight: 700; margin: 0; text-align: center;">
-                        Shaping Future Leaders
-                    </h2>
-                    <p style="font-size: 1em; margin: 10px 0;">
-                        Leadership development is at the core of our academic values.
-                    </p>
-                    <a href="#" style="font-size: 1em; font-weight: 700; color: #000000; text-decoration: none; border-bottom: 2px solid #4A90E2; padding-bottom: 2px;">
-                        LEARN MORE
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-    .carousel-slide {
+    #accordion .content p{
+        display: inline;
+        color: gray;
+        font-weight: 400;
+        font-size: 14px;
+    }
+    #accordion li label span{
+        transform: rotate(90deg);
+    }
+    #accordion label + input[type="radio"]{
         display: none;
-        animation: fade 2.5s ease-in-out;
     }
+    #accordion .content{
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.1s;
+        line-height: 26px;
 
-    .carousel-slide.active {
-        display: block;
     }
-
-    @keyframes fade {
-        from {
-            opacity: 0;
+    #accordion label +input[type="radio"]:checked +.content{
+        max-height: fit-content;
+    }
+    @media(max-width:550px){
+        #accordion{
+        width: 90%;
+        padding-left: 0px;
+    }
+        #accordion li label{
+        color: #2a254d;
+        font-size: 20px;
+        font-weight: 550;
+        display: flex;
+        align-items: center;
+        align-content:space-between;
+        cursor: pointer;
+        padding: 5px 10px;
+        gap: 50%;
         }
-        to {
-            opacity: 1;
+    }
+    @media(min-width:550px)  and (max-width:770px){
+        #accordion{
+        width: 100%;
+        padding-left: 0px;
+    }
+        #accordion li label{
+        color: #2a254d;
+        font-size: 24px;
+        font-weight: 550;
+        display: flex;
+        align-items: center;
+        align-content:space-between;
+        cursor: pointer;
+        padding: 5px 10px;
+        gap: 70%;
         }
     }
-</style>
-
-
-<div style="margin-bottom: 100px;">
-    <p> <h1 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">
-        Why BMC <span style="color: orangered;"> ?</span>
-    </h1></p>
-</div>
-
-<!--About Us starts here-->
-<div class="about-us" style="
-    margin-top: -300px; 
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
-    url('image/whybackground.png') no-repeat center center / cover; 
-    min-height: 100vh; 
-    padding: 20px;">
-   >
-   
-
-    <div class="templates" style="margin-top: 200px;" >
-        <div class="template-1" style="background-color: #4A90E2;">
-            <div class="temp-back">
-                <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4><b>Experienced Faculty</b></h4>
-                <h5>Our teachers have years of experience in their fields, ensuring students receive top-tier education and guidance.</h5>
-                <a href="#">
-                    <h4><p>Read More</p></h4>
-                </a>
-            </div>
-        </div>
-        <div class="template-1" style="background-color: #4A90E2;">
-            <div class="temp-back">
-                <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4><b>Comprehensive Curriculum</b></h4>
-                <h5>Our courses are designed to cover theoretical & practical knowledge .</h5>
-                <a href="#">
-                    <h4><p>Read More</p></h4>
-                </a>
-            </div>
-        </div>
-        <div class="template-1" style="background-color: #4A90E2;">
-            <div class="temp-back">
-                <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4><b>Practical Learning</b></h4>
-                <h5>Students gain hands-on experience through labs, workshops, and industry projects to ensure deep learning.</h5>
-                <a href="#">
-                    <h4><p>Read More</p></h4>
-                </a>
-            </div>
-        </div>
-        <div class="template-1" style="background-color: #4A90E2;">
-            <div class="temp-back">
-                <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4><b>Industry Collaboration</b></h4>
-                <h5>We partner with top companies for internships and placements, offering students valuable opportunities.</h5>
-                <a href="#">
-                    <h4><p>Read More</p></h4>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-    /* Define the growing effect animation */
-@keyframes growEffect {
-    0% {
-        transform: scaleY(0.5); /* Initially scaled down vertically */
-        opacity: 0; /* Initially invisible */
+    @media(min-width:770px)  and (max-width:1025px){
+        #accordion{
+        width: 100%;
+        padding-left: 0px;
     }
-    100% {
-        transform: scaleY(1); /* Full size */
-        opacity: 1; /* Fully visible */
+        #accordion li label{
+        color: #2a254d;
+        font-size: 24px;
+        font-weight: 550;
+        display: flex;
+        align-items: center;
+        align-content:space-between;
+        cursor: pointer;
+        padding: 5px 10px;
+        gap: 50%;
+        }
     }
-}
-
-/* Add initial styles to the .template-1 boxes */
-.template-1 {
-    transition: transform 1s ease, opacity 1s ease;
-    transform: scaleY(0.5); /* Initially scaled down */
-    opacity: 0; /* Initially invisible */
-    visibility: hidden; /* Start hidden */
-}
-
-/* When the element is in the viewport, we trigger the animation */
-.template-1.active {
-    animation: growEffect 1s forwards; /* Apply grow animation */
-    visibility: visible; /* Make it visible once the animation is triggered */
-}
-
-/* Optional: Add styles for the container and general layout */
-.about-us {
-    padding: 50px 0;
-}
-
-.templates {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.template-1 {
-    flex: 1 1 22%; /* Adjust the width of each box */
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-}
-
-</style>
-
-
-<!--about us content starts here-->
-<div class="aboutus-content d section">
-<div class="image-content">
-    <img src="image/bmcbuilding.jpg" alt="">
-    <div class="no">
-        <p><h4>Need to know More Details?</h4></p>
-        <p><h3>(+977) 9812345678</h3></p>
-    </div>
-    <div class="circ"><i class="fa-solid fa-graduation-cap"></i></div>
-</div>
-<div class="text-content">
-    <p><h3 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">About Us</h3></p>
-
-   
-<p><h2 style="color:orangered;">Building a Lifelong Learning <br> and Thriving Community</h2></p>
-<p><h5>Birat Multiple College is dedicated to nurturing talents, fostering innovation, and creating a supportive environment where students and educators thrive together.</h5></p>
-
-    <div class="div1">
-        <div class="container2">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div class="text-portion" style="cursor: pointer;">
-                <p1><h4>Mission</h4></p1>
-                <p2><h5 >Our mission is to foster academic excellence and ethical values, preparing students to excel in their chosen fields.</h5></p2>
-                
-            </div>
-        </div>
-        <div class="container2" style="cursor: pointer;">
-            <i class="fa-solid fa-graduation-cap" ></i>
-            <div class="text-portion">
-                <p1><h4>Vision</h4></p1>
-<p2><h5>Birat Multiple College aims to provide quality education and holistic development to empower students for a brighter future.</h5></p2>
-
-            </div>
-        </div>
-    </div>
-    <a href="about.html" class="button-hover" style="background-color: green;">
-        <h4>Discover More</h4>
-        <i class="fa-solid fa-arrow-right"></i>
-    </a>
-</div>
-</div> 
-
-<style>
-    /* Initial setup for the animation */
-.aboutus-content {
-    opacity: 0; /* Initially hidden */
-    transform: translateY(100px); /* Start from below */
-    transition: all 0.8s ease-in-out; /* Smooth animation */
-}
-
-/* Animation when in viewport */
-.aboutus-content.visible {
-    opacity: 1; /* Make visible */
-    transform: translateY(0); /* Move to the original position */
-}
-
-/* Hover effect for the button */
-.button-hover {
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth background color and transform */
-}
-
-.button-hover:hover {
-    background-color: #228B22; /* Darker green on hover */
-    transform: scale(1.1); /* Slight scale effect */
-}
-
-/* Hover effect for the image */
-.image-content img {
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth scale and filter */
-}
-
-.image-content img:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    filter: brightness(0.8); /* Darken the image */
-}
-
-/* Hover effect for the icons */
-.circ {
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.circ:hover {
-    transform: rotate(360deg); /* Spin effect on hover */
-    color: #4A90E2; /* Change color on hover */
-}
-
-/* Hover effect for the text content */
-.text-content p h3,
-.text-content p h2 {
-    transition: color 0.3s ease; /* Smooth text color change */
-}
-
-.text-content p h3:hover,
-.text-content p h2:hover {
-    color: #4A90E2; /* Highlight text on hover */
-}
-
-/* Hover effect for mission and vision containers */
-.container2:hover {
-    transform: scale(1.05); /* Slight scale effect */
-    transition: transform 0.3s ease; /* Smooth scale effect */
-}
-
-/* For animations on scroll */
-@media (max-width: 768px) {
-    .aboutus-content {
-        padding: 20px; /* Ensure proper padding for small screens */
+    .text-content{
+        margin-top: 4vw;
     }
-}
-
-
-
-/* Start the section with hidden opacity and translate it */
-.section {
-    opacity: 0;
-    transform: translateY(100px);
-    animation: none; /* No animation initially */
-}
-
-/* When the section becomes visible, apply the animation */
-.section.visible {
-    animation: slideIn 0.8s ease-in-out forwards; /* Apply animation */
-}
-
-/* Keyframe for the slideIn animation */
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
+    .text-content h4{
+        margin-top: 2vw;
+        font-weight: 400;
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+    .text-content ul{
+        margin-top: 4vw;
     }
-}
-
-
-/* Add this to your existing CSS animations */
-
-/* Animation for all sections (this can be customized for each section) */
-.section img {
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth scale and filter */
-}
-
-.section img:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    filter: brightness(0.8); /* Darken the image */
-}
-
-.section h2,
-.section h3 {
-    transition: color 0.3s ease; /* Smooth text color change */
-}
-
-.section h2:hover,
-.section h3:hover {
-    color: #4A90E2; /* Highlight text on hover */
-}
-
-</style>
-<div class="testimonal" style="overflow: hidden;">
-    <p><h3>Testimonal</h3></p>
-    <p><h2>What Our Student Feedback</h2></p>
-    <div class="box-container">
-        <div class="container">
-            <div class="wrapper">
-                <div class="slider-content">
-                    <!-- Testimonial 1 -->
-                    <div class="test-box">
-                        <img class="image-right" src="image/aarti.jpg" alt="Testimonial Image">
-                        <p><h4>Being a student Birat Multiple College has been an incredible journey. The BSc Microbiology program provided me with hands-on experience, exceptional faculty support, and modern lab facilities. It has truly shaped my understanding of the field and prepared me for a promising future.</h4></p>
-                        <div class="test-content">
-                            <div class="pg">
-                                <p><h3>Aarti Mahato</h3></p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial 2 -->
-                    <div class="test-box">
-                        <img class="image-right" src="image/student-sus.jpeg" alt="Testimonial Image">
-                        <p><h4>"The Food Technology program at Birat Multiple Campus  has exceeded my expectations. With a perfect blend of theoretical knowledge and practical applications, I gained valuable skills and hands-on experience. The supportive faculty and state-of-the-art labs have truly prepared me for a successful career in the food industry."</h4></p>
-                        <div class="test-content">
-                            <div class="pg">
-                                <p><h3>Sumitra Sitaula</h3></p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial 3 -->
-                    <div class="test-box">
-                        <img class="image-right" src="image/image-3.jpg" alt="Testimonial Image">
-                        <p><h4>"Studying BSc CSE IT at Birat Multiple Campus has been a transformative experience. The well-structured curriculum, experienced faculty, and modern facilities have equipped me with the technical knowledge and practical skills needed to excel in the IT industry. I am confident and ready for future challenges."</h4></p>
-                        <div class="test-content">
-                            <div class="pg">
-                                <p><h3>divya Jha</h3></p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    .shift-bottom h4{
+        margin-top: 1vw;
+        padding: 0vw 0.5vw;
+    }
+   </style>
 
 <style>
 
-.testimonal {
-    padding-top: 7vw;
-    text-align: center;
-    background-color: #d1c7d0;
-    padding-bottom: 10vw;
-    overflow: hidden;
-    max-width: 100%;
- 
-}
-
-.testimonal h3{
-    color: #4f5de4;
-}
-.testimonal h2{
-    color: #2a254d;
-    padding-bottom: 10vw;
-}
-.box-container{
-    margin-left: 8vw;
-    max-width: 80vw;
-    overflow: hidden;
-    border: solid 1px rgb(177, 177, 177);
-    height: fit-content;
-    background-color: rgb(247, 245, 245);
-    border-radius: 30px;
-}
-.container{
-    width: 50vw;
-   
-}
-.wrapper{
+.academic img{
     width: 100%;
+    height: 35vw;
+}
+.academic{
     display: flex;
     flex-direction: row;
 }
-.test-box{
-    text-align: left;
-    width: 50vw;
-    padding: 120px 70px 0px 70px;
-    align-content: center;
-    margin-left: -150px;
-}
-.test-box h4{
-    color: rgb(102, 102, 102);
-    font-weight: 400;
-    margin-top: 20px;
-    line-height: 28px;
-}
-.test-box h3{
-    color: #2a254d;
-    
-}
-.test-content{
-    margin-top: 30px;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    gap: 370px;
-    margin-bottom: 40px;
-}
-.arrow a{
-    color: #4f5de4;
-    padding: 15px 20px;
-    background-color: #dad9da;
-    border-radius: 50%;
-}
-.a-left{
-    margin-right: 15px;
-}
-.test-box .image-top{
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-top: -170px;
-    z-index: 12;
-    border: 5px solid #f8f7f8;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.pg h4{
+@media(max-width:550px){
+   .academic img{
     margin-top: 0px;
+    height: auto;
+   }
+   .academic{
+    display: flex;
+    flex-direction: column;
 }
-.image-right{
-    position: absolute;
-    width: 35vw;
-    height: 35vw;
-    border-radius: 50%;
-    right: 10px;
-    margin-top: -280px;
-    border: 5px solid #f8f7f8;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    overflow: auto;
+   
+}
+@media(max-width:1025px) and (min-width:550px){
+    .academic img{
+    margin-top: 0px;
+    height: auto;
+   }
+}
+.our-campus h4{
+    margin: 1vw 0vw;
+}
+.our-campus a{
+    text-decoration: none;
+    font-weight: 500;
+}
+.our-campus a h4{
+    width: fit-content;
+    text-decoration: none;
+    margin: 1vw ;
+    border-bottom: 1px solid;
+    font-weight: 400;
+    color: green;
 }
 
+</style>
+  
+   
 
-
-@media screen and (max-width: 768px) {
-    .testimonal {
-        padding-top: 10vw;  /* Adjust padding for mobile */
-        padding-bottom: 15vw; /* Adjust bottom padding for mobile */
-    }
-
-    .box-container {
-        margin-left: 5vw;
-        max-width: 90vw;
-        height: auto;
-        background-color: rgb(247, 245, 245);
-        border-radius: 20px;
-    }
-
-    .container {
-        width: 90vw; /* Increase container width for mobile */
-    }
-
-    .wrapper {
-        flex-direction: column; /* Stack the elements vertically on mobile */
-    }
-
-    .test-box {
-        text-align: center; /* Center text on smaller screens */
-       width: 350px;
-        margin-left: 1px;
-    }
-
-    .image-right {
-        width: 25vw; /* Smaller image size for mobile */
-        height: 25vw;
-        margin-top: -100px;
-        right: 150px;
-
-    }
-
-    .test-box .image-top {
-        width: 120px;  /* Adjust image size for mobile */
-        height: 120px;
-        
+    <div class="faculty">
        
-    }
-
-    .test-box h3,
-    .test-box h4 {
-        font-size: 18px;  /* Reduce font size for mobile */
+        <div class="text-portion shift-top">
+            <h3>From Desk of Director</h3>
+            <h1>Leading with Vision and Commitment</h1>
+            <h4>At our institution, we strive to provide an exceptional educational experience that combines academic excellence with personal growth. Our focus is on creating an environment where students are empowered to realize their full potential, guided by a team of dedicated educators. Together with parents, teachers, and staff, we are committed to fostering a culture of innovation, integrity, and collaboration. Our goal is to prepare students for a successful future, equipping them with the skills, knowledge, and values to excel in all walks of life.</h4>
+        </div>
         
-    }
+        <img class="shift-right" src="image/bmc5.png" alt="">
+     </div>
+     
+</div>
+</div>
 
-    .test-box h3{
-        margin-left: 60px;  
-    }
-
-    .arrow a {
-        padding: 10px 15px; /* Smaller arrow buttons on mobile */
-    }
-}
-
-
-
-    </style>
-
-
-<div class="blog ">
-    <p><h3>Latest Blog</h3></p>
-    <p><h2>Latest Updates & Articles</h2></p>
-    <div class="blog-container">
-        <div class="blog-1">
-            <img src="image/image-2.jpg" alt="">
-            <div class="blog-text">
-                <p><h5>Motivational</h5></p>
-                <p><h2>A Complete Guide to stay Motivated and conentrated- 2024</h2></p>
-               <div class="flex-info">
-                    <img src="image/bmcbuilding.jpg" alt="">
-                <div class="s1">
-                    <p><h4>BMC College</h4></p>
-                    <p><h5>Carrer Counselling</h5></p>
+<!-- About Us starts here-->
+<div class="about-us-content">
+    <img src="image/student-lab.jpg" class="shift-left" alt="">
+    <div class="img-content shift-left">
+    </div>
+    <div class="text-content shift-right">
+        <h1 class="ani">Establishing a Community that Encourages Lifelong Learning</h1>
+        <h4 class=" ani">Our mission is to inspire and empower students to achieve excellence in both academics and personal growth. Through innovative teaching methods, a supportive learning environment, and a commitment to holistic education, we aim to nurture responsible, confident, and forward-thinking individuals. Our vision is to create a dynamic and inclusive community where every student is encouraged to explore their potential, embrace challenges, and contribute positively to society.</h4>
+        <ul id="accordion">
+            <li class="shift-bottom" >
+                <label for="Mission"> Our Mission </label>
+                <input type="radio" name="accordion" id="Mission" >
+                <div class="content">
+                    <h4>
+                        At Birat Multiple College, our mission is to provide quality education that empowers students to excel academically and grow as leaders in their respective fields. With a focus on Food Technology, Information Technology (IT), and Microbiology, we aim to equip students with the knowledge, skills, and confidence needed to address real-world challenges and make meaningful contributions to society. Through innovative teaching methods and a supportive learning environment, we strive to build future-ready leaders who are ethical, skilled, and visionary.
+                    </h4>
                 </div>
-                <div class="s2">
-                    <p><h4>26 Mar, 2024</h4></p>
+            </li>
+            <li class="shift-bottom" >
+                <label for="vision">Our Vision &nbsp;</label>
+                <input type="radio" name="accordion" id="vision">
+                <div class="content">
+                    <h4>
+                        Our vision at Birat Multiple College is to become a center of academic excellence, fostering innovation, research, and leadership. By offering dynamic programs in Food Technology, Information Technology (IT), and Microbiology, we aim to prepare students to excel in a competitive global landscape. We envision a future where our graduates drive positive change, contribute to scientific advancement, and lead with integrity, making a lasting impact on society.
+                    </h4>
                 </div>
-               </div>
-            </div>
-        </div>
-        <div class="blog-2">
-            <img src="image/su-student-2.jpg" alt="">
-            <div class="blog-text">
-                <p><h5>Development</h5></p>
-                <p><h2>The Complete Web Developer Guideline 2023</h2></p>
-               <div class="flex-info">
-                    <img src="image/bmcbuilding.jpg" alt="">
-                <div class="s1">
-                    <p><h4>BMC College</h4></p>
-                    <p><h5>FRONTEND DEVELOPER</h5></p>
-                </div>
-                <div class="s2">
-                    <p><h4>20 Sep, 2024</h4></p>
-                </div>
-               </div>
-            </div>
-        </div>
-        <div class="blog-3">
-            <div class="blog-3-container">
-                <i class="fa-solid fa-graduation-cap"></i>
-            <p><h2>Subscribe to Our Newsletter for Daily Updates</h2></p>
-            <div class="login-container">
-                <form action="#">
-                  <input type="email" placeholder="Enter your email" required>
-                  <button type="submit" class="button-hover">Subscribe</button>
-                </form>
-                  <p><h4>Get Latest News and keep Update</h4></p>
-            </div>
-            </div>
-        </div>
+            </li>
+        </ul>
     </div>
 </div>
+
+
+
+
 
 <style>
     .foot {
@@ -1921,7 +1981,7 @@ img {
   background-size: cover; /* Makes the image cover the container */
   background-position: center; /* Centers the background image */
   background-repeat: no-repeat; /* Avoids repeating the image */
-  margin-top: -30px;
+ 
 }
 
 @media (max-width: 768px) {
@@ -1937,7 +1997,7 @@ img {
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(4, 0, 20, 0.8);"></div>
     
     <div class="eduact">
-        <a href="index.html"><h2>Birat Multiple Campus</h2></a>
+        <a href=""><h2>Birat Multiple Campus</h2></a>
         <p><img src="logo.png" alt="Logo" class="logo" style="width: 100px; height: auto;"></p>
 
       
@@ -1947,9 +2007,9 @@ img {
         <div class="quick-links">
             <p><h3>Quick Links</h3></p>
             <div class="links-foot">
-                <p><a class="i1" href="courses.html">Courses</a></p>
-                <p><a class="i1" href="about.html">Mission & Vision</a></p>
-           
+                <p><a class="i1" href="">Courses</a></p>
+                <p><a class="i1" href="">Mission & Vision</a></p>
+                <p><a class="i1" href="">Join a Career</a></p>
             </div>
         </div>
         
@@ -1957,10 +2017,10 @@ img {
             <p><h3>Explore</h3></p>
             <div class="links-foot">
                 <p><a class="i1" href="about.html">About Us</a></p>
-                <p><a class="i1" href="gallery.html">Gallery</a></p>
+               
                 <p><a class="i1" href="blog.html">Blog & News</a></p>
                 <p><a class="i1" href="faq.html">FAQ Questions</a></p>
-               
+                <p><a class="i1" href="testimonial.html">Testimonial</a></p>
                
             </div>
         </div>
@@ -1982,13 +2042,12 @@ img {
         </div>
        
     </div>
-  </div>
-  
-  <footer class=""> 
+</div>
+
+<footer class=""> 
     <p><h4>Copyright 2024 | Birat Multiple College. All Rights Reserved</h4></p>
     <p style="margin-top: -50px;"><h4>Design By <span>Brandwave</span></h4> </p>
-  </footer>
-
+</footer>
 
 <style>
 
@@ -2033,35 +2092,8 @@ img {
         align-items: center; /* Center align for better appearance */
     }
 }
-
-
-
 </style>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <div class="floating-icons" >
                         <a href="https://wa.me/+9779817373232" target="_blank" class="icon whatsapp">
                           <img src="Whatsapp_icon.png" alt="WhatsApp" />
@@ -2071,6 +2103,20 @@ img {
                         </a>
                       </div>
 
+
+                    </div>
+
+                    <script>
+                        // Wait for the entire page to load
+                        window.addEventListener("load", function () {
+                            const preloader = document.getElementById("preloader");
+                            const content = document.getElementById("content");
+                            
+                            // Hide the preloader after loading
+                            preloader.style.display = "none";
+                            content.style.display = "block";
+                        });
+                    </script>
 
 
 
@@ -2327,13 +2373,39 @@ sections.forEach(section => {
     window.onload = startSlider;
     
 </script>
-
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
 
- 
-
+    ScrollReveal().reveal('.shift-left', {
+    duration: 1000,      // Animation duration in milliseconds
+    distance: '100px',    // Distance to travel
+    easing: 'ease', // Easing function
+    origin: 'left',    // Start animation from the bottom        // Start fully transparent
+    reset: true      // Reset animation on scroll (optional)
+  });
+  ScrollReveal().reveal('.shift-right', {
+    duration: 1000,      // Animation duration in milliseconds
+    distance: '50px',    // Distance to travel
+    easing: 'ease', // Easing function
+    origin: 'right',    // Start animation from the bottom        // Start fully transparent
+    reset:true         // Reset animation on scroll (optional)
+  });
+  ScrollReveal().reveal('.shift-bottom', {
+    duration: 1000,      // Animation duration in milliseconds
+    distance: '50px',    // Distance to travel
+    easing: 'ease', // Easing function
+    origin: 'bottom',    // Start animation from the bottom        // Start fully transparent
+    reset: true         // Reset animation on scroll (optional)
+  });
+  ScrollReveal().reveal('.shift-top', {
+    duration: 1000,      // Animation duration in milliseconds
+    distance: '50px',    // Distance to travel
+    easing: 'ease', // Easing function
+    origin: 'top',    // Start animation from the bottom        // Start fully transparent
+    reset:true          // Reset animation on scroll (optional)
+  });
+</script>
         </body>
         </html>

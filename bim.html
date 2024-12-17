@@ -14,7 +14,7 @@
     rel="stylesheet"
   />
   <!-- Alternate PNG format -->
-  <title>Birat Multiple College</title>
+  <title>Microbiology Birat Multiple College</title>
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +24,10 @@
       
       <meta name="description" content="Welcome to Birat Multiple College, where we offer bachelor's degrees in BSc CSIT, Food Technology, and Microbiology in Biratnagar.">
       
+
+      
     <style>
-    .landingpage {
+      .landingpage {
   font-family: 'Poppins', sans-serif;
   background-color: rgba(56, 1, 63, 0.7); /* Backup color for older browsers */
   position: relative; /* Establish a positioning context for the video */
@@ -34,17 +36,19 @@
   height: 100vh;
   padding: 0;
   overflow: hidden;
+  background-color: white;
 }
 
-.background-video {
+.back-img-1{
   position: absolute;
   top: 0;
   left: 0;
   overflow-x: hidden;
   width: 100%;
-  height: 100vh;
-  object-fit: cover; /* Ensure the video covers the entire background */
-  z-index: -1; /* Place the video behind content */
+  height:80vh;
+ 
+  z-index: -2; /* Place the video behind content */
+  opacity: 0.7; 
 }
 
 .overlay {
@@ -52,8 +56,17 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  background-color: rgba(56, 1, 63, 0.7); /* Overlay color with transparency */
+  height: 100%;
+  background-color: rgba(5, 0, 29, 0.8);  /* Overlay color with transparency */
+  z-index: -1; /* Place above the video but below the content */
+}
+.overlay-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: rgba(5, 0, 29, 0.7); /* Overlay color with transparency */
   z-index: -1; /* Place above the video but below the content */
 }
 
@@ -800,125 +813,63 @@
         cursor: pointer;
     }
 }
-
     </style>
-
-
 </head>
 <body>
 
-
-    
-    <style>
-        /* Overlay (background when popup is active) */
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0.3s, opacity 0.3s;
-        }
-
-        .popup-overlay.active {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        /* Popup container */
-        .popup-content {
-            position: relative;
-            width: 495px; /* A4 width in pixels */
-            height: 580px; /* A4 height in pixels */
-            background: #fff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .popup-content img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Close button */
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: red;
-            color: #fff;
-            font-size: 18px;
-            font-weight: bold;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .close-btn:hover {
-            background: darkred;
-        }
-
-        /* Optional: Prevent scrolling when popup is active */
-        body.no-scroll {
-            overflow: hidden;
-        }
-    </style>
-
-    <!-- Popup overlay -->
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-content">
-            <span class="close-btn" id="closeBtn">&times;</span>
-            <img src="image/udated_letter.jpg" alt="Notice Image">
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const popupOverlay = document.getElementById("popupOverlay");
-            const closeBtn = document.getElementById("closeBtn");
-    
-            // Show the popup only on the first visit
-            if (!sessionStorage.getItem("popupShown")) {
-                popupOverlay.classList.add("active");
-                document.body.classList.add("no-scroll");
-                sessionStorage.setItem("popupShown", "true");
-    
-                // Auto-dismiss the popup after 3 seconds
-                setTimeout(() => {
-                    popupOverlay.classList.remove("active");
-                    document.body.classList.remove("no-scroll");
-                }, 3000);
-            }
-    
-            // Close the popup on button click
-            closeBtn.addEventListener("click", () => {
-                popupOverlay.classList.remove("active");
-                document.body.classList.remove("no-scroll");
-            });
-        });
-    </script>
-    
-
-
-
+        
     <div class="landingpage">
-        <video autoplay muted loop class="background-video">
-            <source src="bmcintro.mp4" type="video/mp4">
-        </video>
-        <div class="overlay"></div>
+        <div class="image">
+            <div class="overlay-image"></div>
+            <img class="back-img-1" src="image/bmcbuilding.jpg" alt="">
+            <div class="program-header">
+                <div class="back-button" style="cursor: pointer;" onclick="window.location.href='courses.html';">
+                    <span>&lt; Programs</span>
+                  </div>
+                   
+                <h1 class="program-title">Bachelor in Microbiology</h1>
+              </div>
+
+              
+        </div>
+
+
+      
+
+        <style>
+        /* Container for header */
+.program-header {
+background-color: #070233; /* Black background */
+color: #fff; /* White text color */
+padding: 20px; /* Padding around the text */
+font-family: Arial, sans-serif;
+top: 55%;
+
+position: absolute;
+}
+
+/* Back button styling */
+.back-button {
+position: absolute;
+top: -15px;
+left: 10px;
+background-color: #0044cc; /* Blue background for button */
+color: #fff;
+padding: 5px 10px;
+border-radius: 3px;
+font-size: 14px;
+cursor: pointer;
+}
+
+/* Title styling */
+.program-title {
+margin: 0;
+font-size: 50px; /* Large text size */
+font-weight: normal;
+}
+
+        </style>
+        
     
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg">
@@ -926,7 +877,7 @@
                 <!-- Left side: Logo and college name -->
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <div class="logo-circle">
-                        <img alt="bmc logo" src="logo.png" />
+                        <img alt="eduAct logo" src="logo.png" />
                     </div>
                     <div class="college-name ms-2">
                         <span class="college-line-1">Birat</span><br />
@@ -968,6 +919,140 @@
                 </ul>
             </div>
         </nav>
+
+        <style>
+            .circ-icons1{
+                position: absolute;
+               display: flex;
+               margin-top: 51vh; 
+               margin-left: -60px;
+            }
+            .circ-icons2{
+                position: absolute;
+               display: flex;
+               margin-top: 53vh; 
+            }
+            .circ-icons1 .i1{
+                color: rgb(255, 255, 255);
+                font-size: 120px; 
+            }
+            .circ-icons2 .i2{
+                color: rgb(255, 255, 255);
+                font-size: 120px; 
+            }
+        </style>
+        <div class="circ-icons1">
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            
+        </div>
+        <div class="circ-icons2">
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+        </div>
+    </div>     
+<style>
+    .background-circles {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      overflow: hidden;
+    }
+    .logo-circle {
+      width: 80px;              /* Size of the circle */
+      height: 80px;
+      background: transparent;        /* Background color of the circle */
+      border-radius: 50%;       /* Makes the shape circular */
+      display: flex;    
+      justify-content: center;  /* Center the logo inside the circle */
+      align-items: center;
+     
+      overflow: hidden;         /* Ensure the image stays inside the circle */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    }
+    .logo-circle:hover {
+      transform: scale(1.1); /* Slight zoom effect on hover */
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35), 
+                  inset 0 3px 5px rgba(255, 255, 255, 0.7); /* Enhanced 3D effect */
+    }
+    .logo-circle img {
+      width: 100%;            /* Ensure the image fills the circle */
+      height: 100%;
+      object-fit: cover;      /* Prevent distortion of the image */
+      transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+    }
+    
+    .logo-circle:hover img {
+      transform: scale(1.2); /* Zoom effect on the image */
+    }
+    
+    
+    
+    .floating-icons {
+      position: fixed;            /* Keeps the icons fixed on the screen */
+      bottom: 20px;               /* Distance from the bottom */
+      right: 20px;                /* Distance from the right */
+      display: flex;
+      flex-direction: column;     /* Stack the icons vertically */
+      gap: 10px;                  /* Space between the icons */
+      z-index: 9999;              /* Ensures they appear above all other elements */
+    }
+    
+    .icon {
+      width: 35px;                /* Size of the icon container */
+      height: 35px;
+      background: white;          /* Background color */
+      border-radius: 50%;         /* Makes the container circular */
+      display: flex;              /* Centers the image */
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for visibility */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    }
+    
+    .icon img {
+      width: 60%;                 /* Resizes the icon to fit within the circle */
+      height: 60%;
+    }
+    
+    .icon:hover {
+      transform: scale(1.1);      /* Slight zoom effect on hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    }
+    
+    .icon.whatsapp {
+      background-color: #25d366;  /* WhatsApp green background */
+    }
+    
+    .icon.facebook {
+      background-color: #1877f2;  /* Facebook blue background */
+    }
+</style>
     
     
 <!-- Sidebar -->
@@ -989,7 +1074,7 @@
             <h2 class="nav-title">LIFESTYLE <span class="toggle-icon">+</span></h2>
             <ul class="nav-links">
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="blog.html">News & Events</a></li>
+                <li><a href="news.html">News & Events</a></li>
             </ul>
             <hr>
         </div>
@@ -1007,38 +1092,14 @@
             <ul class="nav-links">
                 <li><a href="notice.html">Notice</a></li>
                 <li><a href="admission.html">Admission</a></li>
-                
+               
             </ul>
             <hr>
         </div>
     </div>
 </div>
-
-
-          <div class="header-content">
-            <div class="custom-carousel">
-              <div class="carousel-slides">
-                <div class="slide active">
-                  <h1 style="color: white;">A Better Learning Journey Future Starts Here</h1>
-                  <a class="btn-custom" href="admission.html">Enroll Now</a>
-                </div>
-                <div class="slide">
-                  <h1 style="color: white;">Explore Our Courses</h1>
-                  <a class="btn-custom" href="courses.html">Our Courses</a>
-                </div>
-                <div class="slide">
-                  <h1 style="color: white;">Explore Birat Multiple College</h1>
-                  <a class="btn-custom" href="about-us.html">Explore Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          
-    
-      </div>
-        </div>
-    </div>
+</div>
+</div>
 </div>
 <div class="top-nav" style="background-color: #2a254d; font-weight: 10; color: white; font-style: normal; font-size: 14px;">
     <div class="nav-links">
@@ -1078,841 +1139,583 @@
         <a href="about.html" class="nav-item" style="text-decoration: none; transition: transform 0.3s; display: inline-block;">ABOUT US</a>
         <a href="contact.html" class="nav-item" style="text-decoration: none; transition: transform 0.3s; display: inline-block;">CONTACT US</a>
     </nav>
-    
-   
-    
-    
     <a class="nav-link" href="#" onclick="toggleSidebar()">
         <i class="fas fa-bars" style="color: blue;"></i>
     </a>
 </div>
 
 
+<div> 
 
-
-
-
-<div class="main-content" style="margin-top: -140px;">
-
-<style>
-    .course {
-    height: auto; /* Let the container adjust to its content */
-    overflow: hidden; /* Prevent unintended scrolling */
-    margin: 0 auto; /* Center the container if needed */
-}
-
-.course-box {
-    display: flex; /* Use flex layout to align child boxes horizontally */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    gap: 50px; /* Add spacing between boxes */
-    justify-content: center; /* Center align the course boxes */
-    overflow: hidden;
-}
-
-.course-template {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    height: auto; /* Adjust height dynamically */
-    width: 325px; /* Adjust width to suit the design */
-    box-sizing: border-box; /* Include padding and border in width/height */
-    padding: 10px;
-    margin-bottom: 20px; /* Add spacing between rows */
-    background-color: #fff; /* Optional for better design */
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional for better aesthetics */
-    overflow: hidden;
-}
-
-.temp {
-    flex: 1; /* Let content inside expand naturally */
-    text-align: center;
-}
-
-.circ2 {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    overflow: hidden;
-}
-
-img {
-    max-width: 100%;
-    height: auto; /* Ensure images scale properly */
-    border-radius: 10px; /* Optional for aesthetic design */
-    overflow: hidden;
-}
-
-/* For responsiveness on mobile screens */
-@media (max-width: 768px) {
-    .course-box {
-        flex-direction: column; /* Stack courses vertically on smaller screens */
-        align-items: center; /* Center align the courses */
-        overflow: hidden;
-    }
-
-    .course-template {
-        width: 90%; /* Take up most of the screen width */
-        overflow: hidden;
-    }
-}
-
-
-</style>
-    
- <!--course starts here-->
-<div class="course " style="height:fit-content;">
-    <p> <h1 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">
-        Explore Our Wide Ranges of Courses
-    </h1></p>
-    
-    <div class="course-box">     
-        <div class="course-template box1" style="background-color: #4A90E2; border-top-left-radius: 15px; border-bottom-right-radius: 15px;">
-            <div class="circ2">
-                <a href="#"><i class="fa-solid fa-heart"></i></a>
-            </div>
-            <a href="bit.html">
-            <img src="image/itstudent.jpeg" alt="">
-            <div class="temp">
-                <p><h5>Bachelor Degree</h5></p>
-                <div class="stars">
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange"></i>
-                    <i class="fa-solid fa-star"></i>   
-                </div>
-                <p1>Bsc. CSE IT</p1>
-                <div class="price-box">
-                    <div class="mentor-info">
-                        <p><h4>Ram Sharma</h4></p>
-                        <p><h5>HOD IT department</h5></p>
-                    </div>
-                    <div class="price-info">
-                        <p><h3>4 years </h3></p>
-                        <p><h4>TU Affilated</h4></p>
-                    </div>
-                </div>
-            </div>
-            </a>
-        </div>
-        <div class="course-template box2" style="background-color: #4A90E2; border-top-left-radius: 15px; border-bottom-right-radius: 15px;">
-            <div class="circ2">
-                <a href="#"><i class="fa-solid fa-heart"></i></a>
-            </div>
-            <a href="bim.html">
-            <img src="image/microbiology.jpg" alt="">
-            <div class="temp">
-                <p><h5>Bachelor Degree</h5></p>
-                <div class="stars">
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange"></i>
-                    <i class="fa-solid fa-star"></i>   
-                </div>
-                <p1>BSC. Microbiology</p1>
-                <div class="price-box">
-                    <div class="mentor-info">
-                        <p><h4>Anu ojha</h4></p>
-                        <p><h5>HOD Microbiology</h5></p>
-                    </div>
-                    <div class="price-info">
-                        <p><h3>4 Years</h3></p>
-                        <p><h4>TU Affilated</h4></p>
-                    </div>
-                </div>
-            </div>
-            </a>
-        </div>
-        <div class="course-template box3" style="background-color: #4A90E2; border-top-left-radius: 15px; border-bottom-right-radius: 15px;">
-            <div class="circ2">
-                <a href="#"><i class="fa-solid fa-heart"></i></a>
-            </div>
-            <a href="bft.html">
-            <img src="image/foodtech.jpeg" alt="">
-            <div class="temp">
-                <p><h5>Bachelor Degree</h5></p>
-                <div class="stars">
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange"></i>
-                    <i class="fa-solid fa-star"></i>   
-                </div>
-                <p1>BSC. Food Technology</p1>
-                <div class="price-box">
-                    <div class="mentor-info">
-                        <p><h4>Shyam Jha</h4></p>
-                        <p><h5>HOD Food Tech</h5></p>
-                    </div>
-                    <div class="price-info">
-                        <p><h3>4 Years</h3></p>
-                        <p><h4>Tu Affilated</h4></p>
-                    </div>
-                </div>
-            </div>
-            </a>
-        </div>
-       
-    </div>
-</div>
-
-
-
-
-<div>
-    <p> <h1 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">
-        BMC Highlights <span style="color: orangered;">!</span>
-    </h1></p>
-</div>
-<div style="
-    font-family: 'Roboto', sans-serif; 
-    margin-bottom: 50px; 
-    margin-top: -100px; 
-    padding: 20px; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    min-height: 100vh; 
-    background-color: #ffffff; 
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('image/higlightbackground.png') no-repeat center center / cover;">
-   
-   <div id="carousel-container" style="text-align: center; max-width: 1100px; width: 100%; padding: 20px; 
-        border-radius: 10px; 
-        margin-top: 100px;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.7);">
-
-        <div class="carousel-slide">
-            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: center;">
-                TRANSFORMING ACADEMIA
-            </h1>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 20px;">
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; 
-                    border-top-left-radius: 10px; 
-                    border-bottom-right-radius: 10px; 
-                    overflow: hidden;">
-                    <img alt="Image 1" src="https://storage.googleapis.com/a1aa/image/y4BfhslSyrWRDaiSEsPlUST660lglyi1Wpal9XMzJKLqgi7JA.jpg"
-                        style="width: 70%; height: auto;">
-                </div>
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; text-align: left;">
-                    <h2 style="font-size: 2em; font-weight: 700; margin: 0; text-align: center;">
-                        Teaching with Excellence
-                    </h2>
-                    <p style="font-size: 1em; margin: 10px 0;">
-                        Birat Multiple College adopts a unique and internationally applied teaching approach, LT-W.
-                    </p>
-                    <a href="#" style="font-size: 1em; font-weight: 700; color: #000000; text-decoration: none; border-bottom: 2px solid #4A90E2; padding-bottom: 2px;">
-                        LEARN MORE
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="carousel-slide">
-            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: center;">
-                INSPIRING INNOVATION
-            </h1>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 20px;">
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; 
-                    border-top-left-radius: 10px; 
-                    border-bottom-right-radius: 10px; 
-                    overflow: hidden;">
-                    <img alt="Image 2" src="image/image-3.jpg"
-                        style="width: 70%; height: auto;">
-                </div>
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; text-align: left;">
-                    <h2 style="font-size: 2em; font-weight: 700; margin: 0; text-align: center;">
-                        Empowering Students
-                    </h2>
-                    <p style="font-size: 1em; margin: 10px 0;">
-                        We focus on empowering students with skills and knowledge for a brighter future.
-                    </p>
-                    <a href="#" style="font-size: 1em; font-weight: 700; color: #000000; text-decoration: none; border-bottom: 2px solid #4A90E2; padding-bottom: 2px;">
-                        LEARN MORE
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="carousel-slide">
-            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: center;">
-                NURTURING LEADERS
-            </h1>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 20px;">
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; 
-                    border-top-left-radius: 10px; 
-                    border-bottom-right-radius: 10px; 
-                    overflow: hidden;">
-                    <img alt="Image 3" src="image/image-1.jpg"
-                        style="width: 70%; height: auto;">
-                </div>
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; text-align: left;">
-                    <h2 style="font-size: 2em; font-weight: 700; margin: 0; text-align: center;">
-                        Shaping Future Leaders
-                    </h2>
-                    <p style="font-size: 1em; margin: 10px 0;">
-                        Leadership development is at the core of our academic values.
-                    </p>
-                    <a href="#" style="font-size: 1em; font-weight: 700; color: #000000; text-decoration: none; border-bottom: 2px solid #4A90E2; padding-bottom: 2px;">
-                        LEARN MORE
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-    .carousel-slide {
-        display: none;
-        animation: fade 2.5s ease-in-out;
-    }
-
-    .carousel-slide.active {
-        display: block;
-    }
-
-    @keyframes fade {
-        from {
-            opacity: 0;
+ 
+    <style>
+        
+        .container {
+           z-index: 1;
+            max-width: 1200px;
         }
-        to {
-            opacity: 1;
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
         }
-    }
-</style>
+        .img-container {
+            flex: 1 1 55%;
+            
+            padding: 20px;
+            
+        }
+        .img-container img {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+        }
+        .dropdown {
+            margin-top: 15px;
+            
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .dropdown-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .dropdown-title i {
+            transition: transform 0.3s ease;
+        }
+        .dropdown-title.collapsed i {
+            transform: rotate(180deg);
+        }
+        .dropdown-content {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+        .dropdown-title.collapsed + .dropdown-content {
+            display: block;
+        }
+        .info-container {
+            flex: 1 1 40%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info {
+           
+            border-radius: 5px;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        .table {
+            width: 100%;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+            font-size: 14px;
+        }
+        .table th {
+            width: 200px;
+            font-weight: bold;
+        }
+      
+    </style>
 
+<div class="container-course detail" style="margin-top: -180px; padding: 50px;">
+    <div class="row" style="z-index: 1;">
+        <!-- Left Section -->
+        <div class="img-container" >
+            <img alt="'" src="image/micro-wide.jpg">
+           
+    <style>
+        
 
-<div style="margin-bottom: 100px;">
-    <p> <h1 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">
-        Why BMC <span style="color: orangered;"> ?</span>
-    </h1></p>
-</div>
+        .dropdown-content {
+           
+            display: none; /* Initially hidden */
+        }
 
-<!--About Us starts here-->
-<div class="about-us" style="
-    margin-top: -300px; 
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
-    url('image/whybackground.png') no-repeat center center / cover; 
-    min-height: 100vh; 
-    padding: 20px;">
-   >
-   
+        .dropdown-title i {
+            font-style: normal; /* For custom symbols */
+        }
+    </style>
 
-    <div class="templates" style="margin-top: 200px;" >
-        <div class="template-1" style="background-color: #4A90E2;">
-            <div class="temp-back">
-                <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4><b>Experienced Faculty</b></h4>
-                <h5>Our teachers have years of experience in their fields, ensuring students receive top-tier education and guidance.</h5>
-                <a href="#">
-                    <h4><p>Read More</p></h4>
-                </a>
-            </div>
+    <div class="dropdown">
+        <div class="dropdown-title" onclick="toggleDropdown(this)">
+            <span>Course Overview</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
-        <div class="template-1" style="background-color: #4A90E2;">
-            <div class="temp-back">
-                <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4><b>Comprehensive Curriculum</b></h4>
-                <h5>Our courses are designed to cover theoretical & practical knowledge .</h5>
-                <a href="#">
-                    <h4><p>Read More</p></h4>
-                </a>
-            </div>
+        <div class="dropdown-content">
+            <p>
+                The <strong>BSc Microbiology</strong> program at Birat Multiple College, affiliated with Tribhuvan University (TU) in Nepal, is designed to provide comprehensive knowledge and practical skills in microbiology. This course equips students to excel in scientific research, healthcare, and biotechnology industries.
+            </p>
+            <ul>
+                <li><strong>Strong Foundation:</strong> Gain in-depth understanding of microbial structure, function, and applications.</li>
+                <li><strong>Practical Training:</strong> Hands-on experience in laboratory techniques, microbial analysis, and research methodologies.</li>
+                <li><strong>Modern Curriculum:</strong> Explore fields like medical microbiology, industrial microbiology, environmental microbiology, and food microbiology.</li>
+                <li><strong>Career Readiness:</strong> Develop skills to work in hospitals, research institutions, pharmaceutical industries, and food safety labs.</li>
+                <li><strong>Expert Faculty:</strong> Learn under the guidance of experienced and highly qualified instructors.</li>
+            </ul>
+            <p>
+                The program spans <strong>4 years</strong> and is divided into <strong>8 semesters</strong>, covering theoretical concepts, laboratory work, and research projects. Students will gain both academic excellence and practical skills needed to address real-world challenges in microbiology.  
+            </p>
+            <p>
+                Enroll in the BSc Microbiology program at Birat Multiple College and step into a future of innovation, discovery, and impactful contributions to science and society.
+            </p>
         </div>
-        <div class="template-1" style="background-color: #4A90E2;">
-            <div class="temp-back">
-                <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4><b>Practical Learning</b></h4>
-                <h5>Students gain hands-on experience through labs, workshops, and industry projects to ensure deep learning.</h5>
-                <a href="#">
-                    <h4><p>Read More</p></h4>
-                </a>
-            </div>
-        </div>
-        <div class="template-1" style="background-color: #4A90E2;">
-            <div class="temp-back">
-                <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4><b>Industry Collaboration</b></h4>
-                <h5>We partner with top companies for internships and placements, offering students valuable opportunities.</h5>
-                <a href="#">
-                    <h4><p>Read More</p></h4>
-                </a>
-            </div>
-        </div>
+        
     </div>
-</div>
 
-<style>
-    /* Define the growing effect animation */
-@keyframes growEffect {
-    0% {
-        transform: scaleY(0.5); /* Initially scaled down vertically */
-        opacity: 0; /* Initially invisible */
-    }
-    100% {
-        transform: scaleY(1); /* Full size */
-        opacity: 1; /* Fully visible */
-    }
-}
-
-/* Add initial styles to the .template-1 boxes */
-.template-1 {
-    transition: transform 1s ease, opacity 1s ease;
-    transform: scaleY(0.5); /* Initially scaled down */
-    opacity: 0; /* Initially invisible */
-    visibility: hidden; /* Start hidden */
-}
-
-/* When the element is in the viewport, we trigger the animation */
-.template-1.active {
-    animation: growEffect 1s forwards; /* Apply grow animation */
-    visibility: visible; /* Make it visible once the animation is triggered */
-}
-
-/* Optional: Add styles for the container and general layout */
-.about-us {
-    padding: 50px 0;
-}
-
-.templates {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.template-1 {
-    flex: 1 1 22%; /* Adjust the width of each box */
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-}
-
-</style>
-
-
-<!--about us content starts here-->
-<div class="aboutus-content d section">
-<div class="image-content">
-    <img src="image/bmcbuilding.jpg" alt="">
-    <div class="no">
-        <p><h4>Need to know More Details?</h4></p>
-        <p><h3>(+977) 9812345678</h3></p>
+    <div class="dropdown">
+        <div class="dropdown-title" onclick="toggleDropdown(this)">
+            <span>Admission Criteria</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="dropdown-content">
+            <p>
+                <strong>Admission Criteria for BSc Microbiology</strong>
+            </p>
+            <ul>
+                <li><strong>Eligibility:</strong> Candidates must have successfully completed +2 or equivalent with a science background.</li>
+                <li><strong>Minimum Qualification:</strong> The +2 qualification must be recognized and validated by the National Examinations Board (NEB), Nepal.</li>
+                <li><strong>Entrance Exam:</strong> Applicants are required to pass the entrance examination conducted by Tribhuvan University (TU).</li>
+                <li><strong>Selection Process:</strong> Admission will be granted based on the performance in the entrance exam and academic records.</li>
+            </ul>
+            <p>
+                Prospective students must meet the above requirements to be eligible for enrollment in the BSc Microbiology program at Birat Multiple College. This ensures a strong foundation for academic success and future growth in the field of microbiology.
+            </p>
+        </div>
+        
     </div>
-    <div class="circ"><i class="fa-solid fa-graduation-cap"></i></div>
-</div>
-<div class="text-content">
-    <p><h3 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">About Us</h3></p>
 
-   
-<p><h2 style="color:orangered;">Building a Lifelong Learning <br> and Thriving Community</h2></p>
-<p><h5>Birat Multiple College is dedicated to nurturing talents, fostering innovation, and creating a supportive environment where students and educators thrive together.</h5></p>
+    <div class="dropdown">
+        <div class="dropdown-title" onclick="toggleDropdown(this)">
+            <span>Career Route </span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="dropdown-content">
+            <p>
+                <strong>Career Opportunities After Completing BSc Microbiology</strong>
+            </p>
+            <ul>
+                <li><strong>Healthcare Sector:</strong> Work as a clinical microbiologist, laboratory technician, or in diagnostic labs, contributing to disease detection, prevention, and treatment.</li>
+                <li><strong>Pharmaceutical Industry:</strong> Pursue roles in drug development, quality control, and research and development (R&D) in pharmaceutical companies.</li>
+                <li><strong>Food Industry:</strong> Specialize in food safety, quality assurance, and food microbiology, ensuring the production of safe and nutritious food products.</li>
+                <li><strong>Biotechnology:</strong> Explore opportunities in genetic engineering, microbial biotechnology, and industrial biotechnology, working with innovative technologies in research and development.</li>
+                <li><strong>Environmental Microbiology:</strong> Contribute to environmental protection through waste management, water quality testing, and environmental monitoring using microbial methods.</li>
+                <li><strong>Academic Research:</strong> Further studies by pursuing a master's or PhD in microbiology or related fields, leading to careers in teaching and advanced scientific research.</li>
+                <li><strong>Government Research and Services:</strong> Work with government agencies in public health, environmental monitoring, and research organizations, providing expertise in microbiological analysis.</li>
+            </ul>
+            <p>
+                Graduates of BSc Microbiology can enter diverse career paths, with opportunities in hospitals, pharmaceutical companies, research labs, food industries, and government agencies. The broad knowledge and practical skills gained during the program provide a solid foundation for both immediate employment and further studies in specialized areas of microbiology.
+            </p>
+        </div>
+        
+    </div>
 
-    <div class="div1">
-        <div class="container2">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div class="text-portion" style="cursor: pointer;">
-                <p1><h4>Mission</h4></p1>
-                <p2><h5 >Our mission is to foster academic excellence and ethical values, preparing students to excel in their chosen fields.</h5></p2>
+    <div class="dropdown">
+        <div class="dropdown-title" onclick="toggleDropdown(this)">
+            <span>Course Structure</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="dropdown-content">
+            <p><strong>Course Structure of BSc Microbiology</strong></p>
+            <p>The BSc Microbiology program spans 4 years, with each year divided into 2 semesters. Below is the detailed course structure, showcasing the subjects for each semester.</p>
+            
+            <!-- Year 1 -->
+            <h4>Year 1</h4>
+            <table style="width:100%; border: 1px solid #000; border-collapse: collapse;">
+                <caption><strong>Semester 1</strong></caption>
+                <thead>
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MICR 101</td>
+                        <td>Introduction to Microbiology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 102</td>
+                        <td>Cell Biology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 103</td>
+                        <td>General Chemistry</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 104</td>
+                        <td>Mathematics for Biologists</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <table style="width:100%; border: 1px solid #000; border-collapse: collapse;">
+                <caption><strong>Semester 2</strong></caption>
+                <thead>
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MICR 201</td>
+                        <td>Microbial Physiology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 202</td>
+                        <td>General Microbiology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 203</td>
+                        <td>Biochemistry</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 204</td>
+                        <td>Environmental Science</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <!-- Year 2 -->
+            <h4>Year 2</h4>
+            <table style="width:100%; border: 1px solid #000; border-collapse: collapse;">
+                <caption><strong>Semester 3</strong></caption>
+                <thead>
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MICR 301</td>
+                        <td>Medical Microbiology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 302</td>
+                        <td>Genetics</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 303</td>
+                        <td>Immunology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 304</td>
+                        <td>Biostatistics</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <table style="width:100%; border: 1px solid #000; border-collapse: collapse;">
+                <caption><strong>Semester 4</strong></caption>
+                <thead>
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MICR 401</td>
+                        <td>Microbial Genetics</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 402</td>
+                        <td>Pharmaceutical Microbiology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 403</td>
+                        <td>Research Methodology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 404</td>
+                        <td>Biotechnology</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <!-- Year 3 -->
+            <h4>Year 3</h4>
+            <table style="width:100%; border: 1px solid #000; border-collapse: collapse;">
+                <caption><strong>Semester 5</strong></caption>
+                <thead>
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MICR 501</td>
+                        <td>Industrial Microbiology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 502</td>
+                        <td>Food Microbiology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 503</td>
+                        <td>Advanced Biochemistry</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 504</td>
+                        <td>Bioinformatics</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <table style="width:100%; border: 1px solid #000; border-collapse: collapse;">
+                <caption><strong>Semester 6</strong></caption>
+                <thead>
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MICR 601</td>
+                        <td>Pathogenic Microorganisms</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 602</td>
+                        <td>Clinical Microbiology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 603</td>
+                        <td>Antimicrobial Agents</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 604</td>
+                        <td>Microbial Ecology</td>
+                    </tr>
+                </tbody>
+            </table>
+        
+            <!-- Year 4 -->
+            <h4>Year 4</h4>
+            <table style="width:100%; border: 1px solid #000; border-collapse: collapse;">
+                <caption><strong>Semester 7</strong></caption>
+                <thead>
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MICR 701</td>
+                        <td>Advanced Medical Microbiology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 702</td>
+                        <td>Microbial Biotechnology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 703</td>
+                        <td>Genetic Engineering</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 704</td>
+                        <td>Virology</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <table style="width:100%; border: 1px solid #000; border-collapse: collapse;">
+                <caption><strong>Semester 8</strong></caption>
+                <thead>
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>MICR 801</td>
+                        <td>Environmental Microbiology</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 802</td>
+                        <td>Research Project</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 803</td>
+                        <td>Microbial Pathogenesis</td>
+                    </tr>
+                    <tr>
+                        <td>MICR 804</td>
+                        <td>Bioprocessing</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+
+
+            <div class="dropdown">
+                <div class="dropdown-title" onclick="toggleDropdown(this)">
+                    <span>Course Objectives</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <p><strong>Course Objectives of BSc Microbiology</strong></p>
+                    <ul>
+                        <li><strong>Foundation of Microbiology:</strong> Provide students with a strong understanding of microbiology, including the structure, function, and classification of microorganisms.</li>
+                        <li><strong>Hands-on Laboratory Experience:</strong> Equip students with practical skills in microbiology techniques, laboratory work, and microbial analysis for real-world applications.</li>
+                        <li><strong>Interdisciplinary Knowledge:</strong> Integrate knowledge from various fields such as chemistry, biochemistry, and biotechnology to offer a comprehensive understanding of microbiology.</li>
+                        <li><strong>Research and Critical Thinking:</strong> Foster critical thinking, research skills, and problem-solving abilities for students to conduct independent scientific research.</li>
+                        <li><strong>Career Readiness:</strong> Prepare students for careers in industries such as healthcare, pharmaceuticals, biotechnology, food safety, and environmental sciences.</li>
+                        <li><strong>Promote Innovation:</strong> Encourage students to explore innovative applications of microbiology, including genetic engineering, environmental microbiology, and bioinformatics.</li>
+                    </ul>
+                    <p>
+                        The BSc Microbiology program at Birat Multiple College aims to build well-rounded professionals who can contribute effectively to the field of microbiology, solving global challenges through science, research, and technological advancement.
+                    </p>
+                </div>
                 
             </div>
         </div>
-        <div class="container2" style="cursor: pointer;">
-            <i class="fa-solid fa-graduation-cap" ></i>
-            <div class="text-portion">
-                <p1><h4>Vision</h4></p1>
-<p2><h5>Birat Multiple College aims to provide quality education and holistic development to empower students for a brighter future.</h5></p2>
-
+        <!-- Right Section -->
+        <div class="info-container">
+            <div class="contact-info">
+                <button class="btn btn-outline-primary mb-3">Apply Now</button>
+                <p>For details about the course</p>
+                <p><i class="fas fa-phone-alt"></i> Call Us: +977-21420900</p>
             </div>
-        </div>
-    </div>
-    <a href="about.html" class="button-hover" style="background-color: green;">
-        <h4>Discover More</h4>
-        <i class="fa-solid fa-arrow-right"></i>
-    </a>
-</div>
-</div> 
-
-<style>
-    /* Initial setup for the animation */
-.aboutus-content {
-    opacity: 0; /* Initially hidden */
-    transform: translateY(100px); /* Start from below */
-    transition: all 0.8s ease-in-out; /* Smooth animation */
-}
-
-/* Animation when in viewport */
-.aboutus-content.visible {
-    opacity: 1; /* Make visible */
-    transform: translateY(0); /* Move to the original position */
-}
-
-/* Hover effect for the button */
-.button-hover {
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth background color and transform */
-}
-
-.button-hover:hover {
-    background-color: #228B22; /* Darker green on hover */
-    transform: scale(1.1); /* Slight scale effect */
-}
-
-/* Hover effect for the image */
-.image-content img {
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth scale and filter */
-}
-
-.image-content img:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    filter: brightness(0.8); /* Darken the image */
-}
-
-/* Hover effect for the icons */
-.circ {
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.circ:hover {
-    transform: rotate(360deg); /* Spin effect on hover */
-    color: #4A90E2; /* Change color on hover */
-}
-
-/* Hover effect for the text content */
-.text-content p h3,
-.text-content p h2 {
-    transition: color 0.3s ease; /* Smooth text color change */
-}
-
-.text-content p h3:hover,
-.text-content p h2:hover {
-    color: #4A90E2; /* Highlight text on hover */
-}
-
-/* Hover effect for mission and vision containers */
-.container2:hover {
-    transform: scale(1.05); /* Slight scale effect */
-    transition: transform 0.3s ease; /* Smooth scale effect */
-}
-
-/* For animations on scroll */
-@media (max-width: 768px) {
-    .aboutus-content {
-        padding: 20px; /* Ensure proper padding for small screens */
-    }
-}
-
-
-
-/* Start the section with hidden opacity and translate it */
-.section {
-    opacity: 0;
-    transform: translateY(100px);
-    animation: none; /* No animation initially */
-}
-
-/* When the section becomes visible, apply the animation */
-.section.visible {
-    animation: slideIn 0.8s ease-in-out forwards; /* Apply animation */
-}
-
-/* Keyframe for the slideIn animation */
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* Add this to your existing CSS animations */
-
-/* Animation for all sections (this can be customized for each section) */
-.section img {
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth scale and filter */
-}
-
-.section img:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    filter: brightness(0.8); /* Darken the image */
-}
-
-.section h2,
-.section h3 {
-    transition: color 0.3s ease; /* Smooth text color change */
-}
-
-.section h2:hover,
-.section h3:hover {
-    color: #4A90E2; /* Highlight text on hover */
-}
-
-</style>
-<div class="testimonal" style="overflow: hidden;">
-    <p><h3>Testimonal</h3></p>
-    <p><h2>What Our Student Feedback</h2></p>
-    <div class="box-container">
-        <div class="container">
-            <div class="wrapper">
-                <div class="slider-content">
-                    <!-- Testimonial 1 -->
-                    <div class="test-box">
-                        <img class="image-right" src="image/aarti.jpg" alt="Testimonial Image">
-                        <p><h4>Being a student Birat Multiple College has been an incredible journey. The BSc Microbiology program provided me with hands-on experience, exceptional faculty support, and modern lab facilities. It has truly shaped my understanding of the field and prepared me for a promising future.</h4></p>
-                        <div class="test-content">
-                            <div class="pg">
-                                <p><h3>Aarti Mahato</h3></p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial 2 -->
-                    <div class="test-box">
-                        <img class="image-right" src="image/student-sus.jpeg" alt="Testimonial Image">
-                        <p><h4>"The Food Technology program at Birat Multiple Campus  has exceeded my expectations. With a perfect blend of theoretical knowledge and practical applications, I gained valuable skills and hands-on experience. The supportive faculty and state-of-the-art labs have truly prepared me for a successful career in the food industry."</h4></p>
-                        <div class="test-content">
-                            <div class="pg">
-                                <p><h3>Sumitra Sitaula</h3></p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial 3 -->
-                    <div class="test-box">
-                        <img class="image-right" src="image/image-3.jpg" alt="Testimonial Image">
-                        <p><h4>"Studying BSc CSE IT at Birat Multiple Campus has been a transformative experience. The well-structured curriculum, experienced faculty, and modern facilities have equipped me with the technical knowledge and practical skills needed to excel in the IT industry. I am confident and ready for future challenges."</h4></p>
-                        <div class="test-content">
-                            <div class="pg">
-                                <p><h3>divya Jha</h3></p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div>
+                <div class="header">Course Snapshot</div>
+                <table class="table table-bordered">
+                    <tbody>
+                    <tr>
+                        <th>Course Name</th>
+                        <td>BSC Microbiology</td>
+                    </tr>
+                    <tr>
+                        <th>Affilation</th>
+                        <td>TU Affilated</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>4 Year </td>
+                    </tr>
+                    <tr>
+                        <th>Admission</th>
+                        <td>(Deadline) June Every Year</td>
+                    </tr>
+                    <tr>
+                        <th>Fees</th>
+                        <td>Nrs. 448,000 <br></td>
+                    </tr>
+                  
+                  
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
 
-<style>
-
-.testimonal {
-    padding-top: 7vw;
-    text-align: center;
-    background-color: #d1c7d0;
-    padding-bottom: 10vw;
-    overflow: hidden;
-    max-width: 100%;
- 
-}
-
-.testimonal h3{
-    color: #4f5de4;
-}
-.testimonal h2{
-    color: #2a254d;
-    padding-bottom: 10vw;
-}
-.box-container{
-    margin-left: 8vw;
-    max-width: 80vw;
-    overflow: hidden;
-    border: solid 1px rgb(177, 177, 177);
-    height: fit-content;
-    background-color: rgb(247, 245, 245);
-    border-radius: 30px;
-}
-.container{
-    width: 50vw;
-   
-}
-.wrapper{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-.test-box{
-    text-align: left;
-    width: 50vw;
-    padding: 120px 70px 0px 70px;
-    align-content: center;
-    margin-left: -150px;
-}
-.test-box h4{
-    color: rgb(102, 102, 102);
-    font-weight: 400;
-    margin-top: 20px;
-    line-height: 28px;
-}
-.test-box h3{
-    color: #2a254d;
-    
-}
-.test-content{
-    margin-top: 30px;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    gap: 370px;
-    margin-bottom: 40px;
-}
-.arrow a{
-    color: #4f5de4;
-    padding: 15px 20px;
-    background-color: #dad9da;
-    border-radius: 50%;
-}
-.a-left{
-    margin-right: 15px;
-}
-.test-box .image-top{
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-top: -170px;
-    z-index: 12;
-    border: 5px solid #f8f7f8;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.pg h4{
-    margin-top: 0px;
-}
-.image-right{
-    position: absolute;
-    width: 35vw;
-    height: 35vw;
-    border-radius: 50%;
-    right: 10px;
-    margin-top: -280px;
-    border: 5px solid #f8f7f8;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    overflow: auto;
-}
 
 
 
-@media screen and (max-width: 768px) {
-    .testimonal {
-        padding-top: 10vw;  /* Adjust padding for mobile */
-        padding-bottom: 15vw; /* Adjust bottom padding for mobile */
-    }
-
-    .box-container {
-        margin-left: 5vw;
-        max-width: 90vw;
-        height: auto;
-        background-color: rgb(247, 245, 245);
-        border-radius: 20px;
-    }
-
-    .container {
-        width: 90vw; /* Increase container width for mobile */
-    }
-
-    .wrapper {
-        flex-direction: column; /* Stack the elements vertically on mobile */
-    }
-
-    .test-box {
-        text-align: center; /* Center text on smaller screens */
-       width: 350px;
-        margin-left: 1px;
-    }
-
-    .image-right {
-        width: 25vw; /* Smaller image size for mobile */
-        height: 25vw;
-        margin-top: -100px;
-        right: 150px;
-
-    }
-
-    .test-box .image-top {
-        width: 120px;  /* Adjust image size for mobile */
-        height: 120px;
-        
-       
-    }
-
-    .test-box h3,
-    .test-box h4 {
-        font-size: 18px;  /* Reduce font size for mobile */
-        
-    }
-
-    .test-box h3{
-        margin-left: 60px;  
-    }
-
-    .arrow a {
-        padding: 10px 15px; /* Smaller arrow buttons on mobile */
-    }
-}
-
-
-
-    </style>
-
-
-<div class="blog ">
-    <p><h3>Latest Blog</h3></p>
-    <p><h2>Latest Updates & Articles</h2></p>
-    <div class="blog-container">
-        <div class="blog-1">
-            <img src="image/image-2.jpg" alt="">
-            <div class="blog-text">
-                <p><h5>Motivational</h5></p>
-                <p><h2>A Complete Guide to stay Motivated and conentrated- 2024</h2></p>
-               <div class="flex-info">
-                    <img src="image/bmcbuilding.jpg" alt="">
-                <div class="s1">
-                    <p><h4>BMC College</h4></p>
-                    <p><h5>Carrer Counselling</h5></p>
-                </div>
-                <div class="s2">
-                    <p><h4>26 Mar, 2024</h4></p>
-                </div>
-               </div>
+        <div class="container content" style="margin-left: 200px;  ">
+            <div class="text-box" style="z-index: 2;">
+                <h2>Why start your Microbiology studies at Birat Multiple College?</h2>
+                <ul>
+                    <li>Guaranteed entry into advanced levels of microbiology education</li>
+                    <li>Study the same subjects as first-year BSc Microbiology students</li>
+                    <li>Highly personalised, interactive learning style</li>
+                    <li>Extensive support services and small classes</li>
+                    <li>Highly qualified, industry-experienced teachers with a focus on practical skills</li>
+                </ul>
+            </div>
+            
+            <div class="image-box">
+                <img src="image/student-lab.jpg" alt="Three students working together on a computer in a classroom setting" />
             </div>
         </div>
-        <div class="blog-2">
-            <img src="image/su-student-2.jpg" alt="">
-            <div class="blog-text">
-                <p><h5>Development</h5></p>
-                <p><h2>The Complete Web Developer Guideline 2023</h2></p>
-               <div class="flex-info">
-                    <img src="image/bmcbuilding.jpg" alt="">
-                <div class="s1">
-                    <p><h4>BMC College</h4></p>
-                    <p><h5>FRONTEND DEVELOPER</h5></p>
-                </div>
-                <div class="s2">
-                    <p><h4>20 Sep, 2024</h4></p>
-                </div>
-               </div>
-            </div>
-        </div>
-        <div class="blog-3">
-            <div class="blog-3-container">
-                <i class="fa-solid fa-graduation-cap"></i>
-            <p><h2>Subscribe to Our Newsletter for Daily Updates</h2></p>
-            <div class="login-container">
-                <form action="#">
-                  <input type="email" placeholder="Enter your email" required>
-                  <button type="submit" class="button-hover">Subscribe</button>
-                </form>
-                  <p><h4>Get Latest News and keep Update</h4></p>
-            </div>
-            </div>
-        </div>
-    </div>
+
+        <style>
+            .content {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                padding: 20px;
+               
+            }
+            .text-box {
+                background-color: #f8f9fa;
+                padding: 30px;
+                font-size: 14px;
+                line-height: 1.5;
+                position: absolute;
+                top: 50%;
+                left: 2px;
+                transform: translateY(-50%);
+                width: 60%;
+                max-width: 400px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+            }
+            .text-box h2 {
+                font-size: 18px;
+                color: #e74c3c;
+                margin-bottom: 10px;
+            }
+            .text-box ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            .text-box ul li {
+                margin-bottom: 8px;
+            }
+            .text-box ul li::before {
+                content: "\2022";
+                color: black;
+                font-weight: bold;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+            }
+            .image-box img {
+                width: 700px;
+                
+                height: 410px;
+               
+            }
+        </style>
+
+
+
 </div>
+
+
+
+
+
+</div>
+
+
+
+
+
 
 <style>
     .foot {
@@ -1921,7 +1724,7 @@ img {
   background-size: cover; /* Makes the image cover the container */
   background-position: center; /* Centers the background image */
   background-repeat: no-repeat; /* Avoids repeating the image */
-  margin-top: -30px;
+ 
 }
 
 @media (max-width: 768px) {
@@ -1937,7 +1740,7 @@ img {
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(4, 0, 20, 0.8);"></div>
     
     <div class="eduact">
-        <a href="index.html"><h2>Birat Multiple Campus</h2></a>
+        <a href=""><h2>Birat Multiple Campus</h2></a>
         <p><img src="logo.png" alt="Logo" class="logo" style="width: 100px; height: auto;"></p>
 
       
@@ -1947,9 +1750,9 @@ img {
         <div class="quick-links">
             <p><h3>Quick Links</h3></p>
             <div class="links-foot">
-                <p><a class="i1" href="courses.html">Courses</a></p>
-                <p><a class="i1" href="about.html">Mission & Vision</a></p>
-           
+                <p><a class="i1" href="">Courses</a></p>
+                <p><a class="i1" href="">Mission & Vision</a></p>
+                <p><a class="i1" href="">Join a Career</a></p>
             </div>
         </div>
         
@@ -1957,10 +1760,10 @@ img {
             <p><h3>Explore</h3></p>
             <div class="links-foot">
                 <p><a class="i1" href="about.html">About Us</a></p>
-                <p><a class="i1" href="gallery.html">Gallery</a></p>
+               
                 <p><a class="i1" href="blog.html">Blog & News</a></p>
                 <p><a class="i1" href="faq.html">FAQ Questions</a></p>
-               
+                <p><a class="i1" href="testimonial.html">Testimonial</a></p>
                
             </div>
         </div>
@@ -1982,12 +1785,12 @@ img {
         </div>
        
     </div>
-  </div>
-  
-  <footer class=""> 
+</div>
+
+<footer class=""> 
     <p><h4>Copyright 2024 | Birat Multiple College. All Rights Reserved</h4></p>
     <p style="margin-top: -50px;"><h4>Design By <span>Brandwave</span></h4> </p>
-  </footer>
+</footer>
 
 
 <style>
@@ -2033,35 +1836,8 @@ img {
         align-items: center; /* Center align for better appearance */
     }
 }
-
-
-
 </style>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <div class="floating-icons" >
                         <a href="https://wa.me/+9779817373232" target="_blank" class="icon whatsapp">
                           <img src="Whatsapp_icon.png" alt="WhatsApp" />
@@ -2073,7 +1849,21 @@ img {
 
 
 
-
+                      <script>
+                        function toggleDropdown(element) {
+                            const content = element.nextElementSibling; // Select dropdown content
+                            const icon = element.querySelector("i"); // Select the icon
+                
+                            // Toggle display of content
+                            if (content.style.display === "block") {
+                                content.style.display = "none";
+                                icon.classList.remove("rotate");
+                            } else {
+                                content.style.display = "block";
+                                icon.classList.add("rotate");
+                            }
+                        }
+                    </script>
 
                       <script>
                         // Function to toggle sidebar visibility

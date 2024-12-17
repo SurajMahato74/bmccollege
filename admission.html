@@ -14,7 +14,7 @@
     rel="stylesheet"
   />
   <!-- Alternate PNG format -->
-  <title>Birat Multiple College</title>
+  <title>Admission Birat Multiple College</title>
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +24,10 @@
       
       <meta name="description" content="Welcome to Birat Multiple College, where we offer bachelor's degrees in BSc CSIT, Food Technology, and Microbiology in Biratnagar.">
       
+
+      
     <style>
-    .landingpage {
+      .landingpage {
   font-family: 'Poppins', sans-serif;
   background-color: rgba(56, 1, 63, 0.7); /* Backup color for older browsers */
   position: relative; /* Establish a positioning context for the video */
@@ -34,17 +36,19 @@
   height: 100vh;
   padding: 0;
   overflow: hidden;
+  background-color: white;
 }
 
-.background-video {
+.back-img-1{
   position: absolute;
   top: 0;
   left: 0;
   overflow-x: hidden;
   width: 100%;
-  height: 100vh;
-  object-fit: cover; /* Ensure the video covers the entire background */
-  z-index: -1; /* Place the video behind content */
+  height:80vh;
+ 
+  z-index: -2; /* Place the video behind content */
+  opacity: 0.7; 
 }
 
 .overlay {
@@ -52,8 +56,17 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
-  background-color: rgba(56, 1, 63, 0.7); /* Overlay color with transparency */
+  height: 100%;
+  background-color: rgba(5, 0, 29, 0.8);  /* Overlay color with transparency */
+  z-index: -1; /* Place above the video but below the content */
+}
+.overlay-image{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: rgba(5, 0, 29, 0.7); /* Overlay color with transparency */
   z-index: -1; /* Place above the video but below the content */
 }
 
@@ -800,125 +813,31 @@
         cursor: pointer;
     }
 }
-
     </style>
-
-
 </head>
 <body>
 
+        <div class="landingpage">
+            <div class="image">
+                <div class="overlay-image"></div>
+                <img class="back-img-1" src="image/bmcbuilding.jpg" alt="">
+                <div class="centered-text">Admission at BMC</div>
+            </div>
 
-    
-    <style>
-        /* Overlay (background when popup is active) */
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0.3s, opacity 0.3s;
-        }
-
-        .popup-overlay.active {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        /* Popup container */
-        .popup-content {
-            position: relative;
-            width: 495px; /* A4 width in pixels */
-            height: 580px; /* A4 height in pixels */
-            background: #fff;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .popup-content img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Close button */
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: red;
-            color: #fff;
-            font-size: 18px;
-            font-weight: bold;
-            width: 30px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .close-btn:hover {
-            background: darkred;
-        }
-
-        /* Optional: Prevent scrolling when popup is active */
-        body.no-scroll {
-            overflow: hidden;
-        }
-    </style>
-
-    <!-- Popup overlay -->
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-content">
-            <span class="close-btn" id="closeBtn">&times;</span>
-            <img src="image/udated_letter.jpg" alt="Notice Image">
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const popupOverlay = document.getElementById("popupOverlay");
-            const closeBtn = document.getElementById("closeBtn");
-    
-            // Show the popup only on the first visit
-            if (!sessionStorage.getItem("popupShown")) {
-                popupOverlay.classList.add("active");
-                document.body.classList.add("no-scroll");
-                sessionStorage.setItem("popupShown", "true");
-    
-                // Auto-dismiss the popup after 3 seconds
-                setTimeout(() => {
-                    popupOverlay.classList.remove("active");
-                    document.body.classList.remove("no-scroll");
-                }, 3000);
-            }
-    
-            // Close the popup on button click
-            closeBtn.addEventListener("click", () => {
-                popupOverlay.classList.remove("active");
-                document.body.classList.remove("no-scroll");
-            });
-        });
-    </script>
-    
-
-
-
-    <div class="landingpage">
-        <video autoplay muted loop class="background-video">
-            <source src="bmcintro.mp4" type="video/mp4">
-        </video>
-        <div class="overlay"></div>
+            <style>
+                .centered-text {
+    position: absolute;
+    top: 50%; /* Move to center vertically */
+    left: 50%; /* Move to center horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    color: white; /* Text color */
+    font-size: 2rem; /* Adjust text size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center;
+    z-index: 2; /* Ensure text is above the image */
+}
+            </style>
+        
     
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg">
@@ -926,7 +845,7 @@
                 <!-- Left side: Logo and college name -->
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
                     <div class="logo-circle">
-                        <img alt="bmc logo" src="logo.png" />
+                        <img alt="eduAct logo" src="logo.png" />
                     </div>
                     <div class="college-name ms-2">
                         <span class="college-line-1">Birat</span><br />
@@ -968,6 +887,140 @@
                 </ul>
             </div>
         </nav>
+
+        <style>
+            .circ-icons1{
+                position: absolute;
+               display: flex;
+               margin-top: 51vh; 
+               margin-left: -60px;
+            }
+            .circ-icons2{
+                position: absolute;
+               display: flex;
+               margin-top: 53vh; 
+            }
+            .circ-icons1 .i1{
+                color: rgb(255, 255, 255);
+                font-size: 120px; 
+            }
+            .circ-icons2 .i2{
+                color: rgb(255, 255, 255);
+                font-size: 120px; 
+            }
+        </style>
+        <div class="circ-icons1">
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            <i class="fa-solid fa-circle i1"></i>
+            
+        </div>
+        <div class="circ-icons2">
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+            <i class="fa-solid fa-circle i2"></i>
+        </div>
+    </div>     
+<style>
+    .background-circles {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      overflow: hidden;
+    }
+    .logo-circle {
+      width: 80px;              /* Size of the circle */
+      height: 80px;
+      background: transparent;        /* Background color of the circle */
+      border-radius: 50%;       /* Makes the shape circular */
+      display: flex;    
+      justify-content: center;  /* Center the logo inside the circle */
+      align-items: center;
+     
+      overflow: hidden;         /* Ensure the image stays inside the circle */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    }
+    .logo-circle:hover {
+      transform: scale(1.1); /* Slight zoom effect on hover */
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35), 
+                  inset 0 3px 5px rgba(255, 255, 255, 0.7); /* Enhanced 3D effect */
+    }
+    .logo-circle img {
+      width: 100%;            /* Ensure the image fills the circle */
+      height: 100%;
+      object-fit: cover;      /* Prevent distortion of the image */
+      transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+    }
+    
+    .logo-circle:hover img {
+      transform: scale(1.2); /* Zoom effect on the image */
+    }
+    
+    
+    
+    .floating-icons {
+      position: fixed;            /* Keeps the icons fixed on the screen */
+      bottom: 20px;               /* Distance from the bottom */
+      right: 20px;                /* Distance from the right */
+      display: flex;
+      flex-direction: column;     /* Stack the icons vertically */
+      gap: 10px;                  /* Space between the icons */
+      z-index: 9999;              /* Ensures they appear above all other elements */
+    }
+    
+    .icon {
+      width: 35px;                /* Size of the icon container */
+      height: 35px;
+      background: white;          /* Background color */
+      border-radius: 50%;         /* Makes the container circular */
+      display: flex;              /* Centers the image */
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow for visibility */
+      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    }
+    
+    .icon img {
+      width: 60%;                 /* Resizes the icon to fit within the circle */
+      height: 60%;
+    }
+    
+    .icon:hover {
+      transform: scale(1.1);      /* Slight zoom effect on hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+    }
+    
+    .icon.whatsapp {
+      background-color: #25d366;  /* WhatsApp green background */
+    }
+    
+    .icon.facebook {
+      background-color: #1877f2;  /* Facebook blue background */
+    }
+</style>
     
     
 <!-- Sidebar -->
@@ -989,7 +1042,7 @@
             <h2 class="nav-title">LIFESTYLE <span class="toggle-icon">+</span></h2>
             <ul class="nav-links">
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="blog.html">News & Events</a></li>
+                <li><a href="news.html">News & Events</a></li>
             </ul>
             <hr>
         </div>
@@ -1007,38 +1060,14 @@
             <ul class="nav-links">
                 <li><a href="notice.html">Notice</a></li>
                 <li><a href="admission.html">Admission</a></li>
-                
+               
             </ul>
             <hr>
         </div>
     </div>
 </div>
-
-
-          <div class="header-content">
-            <div class="custom-carousel">
-              <div class="carousel-slides">
-                <div class="slide active">
-                  <h1 style="color: white;">A Better Learning Journey Future Starts Here</h1>
-                  <a class="btn-custom" href="admission.html">Enroll Now</a>
-                </div>
-                <div class="slide">
-                  <h1 style="color: white;">Explore Our Courses</h1>
-                  <a class="btn-custom" href="courses.html">Our Courses</a>
-                </div>
-                <div class="slide">
-                  <h1 style="color: white;">Explore Birat Multiple College</h1>
-                  <a class="btn-custom" href="about-us.html">Explore Now</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          
-    
-      </div>
-        </div>
-    </div>
+</div>
+</div>
 </div>
 <div class="top-nav" style="background-color: #2a254d; font-weight: 10; color: white; font-style: normal; font-size: 14px;">
     <div class="nav-links">
@@ -1078,841 +1107,135 @@
         <a href="about.html" class="nav-item" style="text-decoration: none; transition: transform 0.3s; display: inline-block;">ABOUT US</a>
         <a href="contact.html" class="nav-item" style="text-decoration: none; transition: transform 0.3s; display: inline-block;">CONTACT US</a>
     </nav>
-    
-   
-    
-    
     <a class="nav-link" href="#" onclick="toggleSidebar()">
         <i class="fas fa-bars" style="color: blue;"></i>
     </a>
 </div>
 
-
-
-
-
-
-<div class="main-content" style="margin-top: -140px;">
-
-<style>
-    .course {
-    height: auto; /* Let the container adjust to its content */
-    overflow: hidden; /* Prevent unintended scrolling */
-    margin: 0 auto; /* Center the container if needed */
-}
-
-.course-box {
-    display: flex; /* Use flex layout to align child boxes horizontally */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    gap: 50px; /* Add spacing between boxes */
-    justify-content: center; /* Center align the course boxes */
-    overflow: hidden;
-}
-
-.course-template {
-    display: flex;
-    flex-direction: column; /* Stack children vertically */
-    height: auto; /* Adjust height dynamically */
-    width: 325px; /* Adjust width to suit the design */
-    box-sizing: border-box; /* Include padding and border in width/height */
-    padding: 10px;
-    margin-bottom: 20px; /* Add spacing between rows */
-    background-color: #fff; /* Optional for better design */
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional for better aesthetics */
-    overflow: hidden;
-}
-
-.temp {
-    flex: 1; /* Let content inside expand naturally */
-    text-align: center;
-}
-
-.circ2 {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    overflow: hidden;
-}
-
-img {
-    max-width: 100%;
-    height: auto; /* Ensure images scale properly */
-    border-radius: 10px; /* Optional for aesthetic design */
-    overflow: hidden;
-}
-
-/* For responsiveness on mobile screens */
-@media (max-width: 768px) {
-    .course-box {
-        flex-direction: column; /* Stack courses vertically on smaller screens */
-        align-items: center; /* Center align the courses */
-        overflow: hidden;
-    }
-
-    .course-template {
-        width: 90%; /* Take up most of the screen width */
-        overflow: hidden;
-    }
-}
-
-
-</style>
-    
- <!--course starts here-->
-<div class="course " style="height:fit-content;">
-    <p> <h1 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">
-        Explore Our Wide Ranges of Courses
-    </h1></p>
-    
-    <div class="course-box">     
-        <div class="course-template box1" style="background-color: #4A90E2; border-top-left-radius: 15px; border-bottom-right-radius: 15px;">
-            <div class="circ2">
-                <a href="#"><i class="fa-solid fa-heart"></i></a>
-            </div>
-            <a href="bit.html">
-            <img src="image/itstudent.jpeg" alt="">
-            <div class="temp">
-                <p><h5>Bachelor Degree</h5></p>
-                <div class="stars">
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange"></i>
-                    <i class="fa-solid fa-star"></i>   
-                </div>
-                <p1>Bsc. CSE IT</p1>
-                <div class="price-box">
-                    <div class="mentor-info">
-                        <p><h4>Ram Sharma</h4></p>
-                        <p><h5>HOD IT department</h5></p>
-                    </div>
-                    <div class="price-info">
-                        <p><h3>4 years </h3></p>
-                        <p><h4>TU Affilated</h4></p>
-                    </div>
-                </div>
-            </div>
-            </a>
+<div class="container-admission mt-5" style="padding: 40px;">
+    <div class="row">
+      <!-- Contact Section -->
+      <div class="col-md-5"  style="margin-top: -200px;">
+        <div class="mdc-card p-4 shadow-sm rounded">
+          <h2 class="text-success mb-3">Find Your Interests!</h2>
+          <p class="text-muted" style="font-size: 14px;">
+            Fill out the form below to connect with us. Our team will contact you shortly with more details about your selected course.
+          </p>
+          <div class="contact-info mt-4">
+            <p class="mb-2"><i class="material-icons text-success mr-2">phone :</i> +977-21420900, +977 9817373232, 420902</p>
+            <p class="mb-2"><i class="material-icons text-success mr-2">email :</i> bmccollage03@gmail.com
+              </p>
+            <p class="mb-2">
+              <i class="material-icons text-success mr-2">place :</i> Rajbanshi Chock, Biratnagar, Kathmandu
+            </p>
+          </div>
+          <div class="map mt-4">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3570.53519910502!2d87.28044497413265!3d26.50290647758412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef73ec33384da3%3A0xa3849a6360b8eca5!2sBirat%20Multiple%20College!5e0!3m2!1sen!2snp!4v1734467151493!5m2!1sen!2snp" width="500" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
-        <div class="course-template box2" style="background-color: #4A90E2; border-top-left-radius: 15px; border-bottom-right-radius: 15px;">
-            <div class="circ2">
-                <a href="#"><i class="fa-solid fa-heart"></i></a>
-            </div>
-            <a href="bim.html">
-            <img src="image/microbiology.jpg" alt="">
-            <div class="temp">
-                <p><h5>Bachelor Degree</h5></p>
-                <div class="stars">
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange"></i>
-                    <i class="fa-solid fa-star"></i>   
+      </div>
+  
+      <!-- Form Section -->
+      <div class="col-md-7">
+        <div class="mdc-card p-4 shadow-sm rounded">
+          <h4 class="mb-3 text-success">Application Form</h4>
+          <form id="interestForm">
+            <!-- Name Fields -->
+            <div class="row mb-3" style="display: flex; gap: 10px;">
+                <div class="col-abc" style="flex: 1;">
+                  <div class="form-group">
+                    <label for="firstName" class="small text-muted">First Name</label>
+                    <input type="text" class="form-control" id="firstName" required />
+                  </div>
                 </div>
-                <p1>BSC. Microbiology</p1>
-                <div class="price-box">
-                    <div class="mentor-info">
-                        <p><h4>Anu ojha</h4></p>
-                        <p><h5>HOD Microbiology</h5></p>
-                    </div>
-                    <div class="price-info">
-                        <p><h3>4 Years</h3></p>
-                        <p><h4>TU Affilated</h4></p>
-                    </div>
+                <div class="col-abc" style="flex: 1;">
+                  <div class="form-group">
+                    <label for="lastName" class="small text-muted">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" required />
+                  </div>
                 </div>
-            </div>
-            </a>
-        </div>
-        <div class="course-template box3" style="background-color: #4A90E2; border-top-left-radius: 15px; border-bottom-right-radius: 15px;">
-            <div class="circ2">
-                <a href="#"><i class="fa-solid fa-heart"></i></a>
-            </div>
-            <a href="bft.html">
-            <img src="image/foodtech.jpeg" alt="">
-            <div class="temp">
-                <p><h5>Bachelor Degree</h5></p>
-                <div class="stars">
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange;"></i>
-                    <i class="fa-solid fa-star" style="color: orange"></i>
-                    <i class="fa-solid fa-star"></i>   
-                </div>
-                <p1>BSC. Food Technology</p1>
-                <div class="price-box">
-                    <div class="mentor-info">
-                        <p><h4>Shyam Jha</h4></p>
-                        <p><h5>HOD Food Tech</h5></p>
-                    </div>
-                    <div class="price-info">
-                        <p><h3>4 Years</h3></p>
-                        <p><h4>Tu Affilated</h4></p>
-                    </div>
-                </div>
-            </div>
-            </a>
-        </div>
-       
+              </div>
+              
+  
+           <!-- Email and Phone -->
+<div class="row mb-3" style="display: flex; gap: 10px;">
+    <div class="col-abc" style="flex: 1;">
+      <div class="form-group">
+        <label for="email" class="small text-muted">Email Address</label>
+        <input type="email" class="form-control" id="email" required />
+      </div>
     </div>
-</div>
-
-
-
-
-<div>
-    <p> <h1 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">
-        BMC Highlights <span style="color: orangered;">!</span>
-    </h1></p>
-</div>
-<div style="
-    font-family: 'Roboto', sans-serif; 
-    margin-bottom: 50px; 
-    margin-top: -100px; 
-    padding: 20px; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    min-height: 100vh; 
-    background-color: #ffffff; 
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('image/higlightbackground.png') no-repeat center center / cover;">
-   
-   <div id="carousel-container" style="text-align: center; max-width: 1100px; width: 100%; padding: 20px; 
-        border-radius: 10px; 
-        margin-top: 100px;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.7);">
-
-        <div class="carousel-slide">
-            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: center;">
-                TRANSFORMING ACADEMIA
-            </h1>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 20px;">
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; 
-                    border-top-left-radius: 10px; 
-                    border-bottom-right-radius: 10px; 
-                    overflow: hidden;">
-                    <img alt="Image 1" src="https://storage.googleapis.com/a1aa/image/y4BfhslSyrWRDaiSEsPlUST660lglyi1Wpal9XMzJKLqgi7JA.jpg"
-                        style="width: 70%; height: auto;">
-                </div>
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; text-align: left;">
-                    <h2 style="font-size: 2em; font-weight: 700; margin: 0; text-align: center;">
-                        Teaching with Excellence
-                    </h2>
-                    <p style="font-size: 1em; margin: 10px 0;">
-                        Birat Multiple College adopts a unique and internationally applied teaching approach, LT-W.
-                    </p>
-                    <a href="#" style="font-size: 1em; font-weight: 700; color: #000000; text-decoration: none; border-bottom: 2px solid #4A90E2; padding-bottom: 2px;">
-                        LEARN MORE
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="carousel-slide">
-            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: center;">
-                INSPIRING INNOVATION
-            </h1>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 20px;">
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; 
-                    border-top-left-radius: 10px; 
-                    border-bottom-right-radius: 10px; 
-                    overflow: hidden;">
-                    <img alt="Image 2" src="image/image-3.jpg"
-                        style="width: 70%; height: auto;">
-                </div>
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; text-align: left;">
-                    <h2 style="font-size: 2em; font-weight: 700; margin: 0; text-align: center;">
-                        Empowering Students
-                    </h2>
-                    <p style="font-size: 1em; margin: 10px 0;">
-                        We focus on empowering students with skills and knowledge for a brighter future.
-                    </p>
-                    <a href="#" style="font-size: 1em; font-weight: 700; color: #000000; text-decoration: none; border-bottom: 2px solid #4A90E2; padding-bottom: 2px;">
-                        LEARN MORE
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="carousel-slide">
-            <h1 style="font-size: 2.4em; font-weight: 700; color: #bbbbbb; margin: 0; text-align: center;">
-                NURTURING LEADERS
-            </h1>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; margin-top: 20px;">
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; 
-                    border-top-left-radius: 10px; 
-                    border-bottom-right-radius: 10px; 
-                    overflow: hidden;">
-                    <img alt="Image 3" src="image/image-1.jpg"
-                        style="width: 70%; height: auto;">
-                </div>
-                <div style="flex: 1; min-width: 300px; max-width: 600px; padding: 10px; text-align: left;">
-                    <h2 style="font-size: 2em; font-weight: 700; margin: 0; text-align: center;">
-                        Shaping Future Leaders
-                    </h2>
-                    <p style="font-size: 1em; margin: 10px 0;">
-                        Leadership development is at the core of our academic values.
-                    </p>
-                    <a href="#" style="font-size: 1em; font-weight: 700; color: #000000; text-decoration: none; border-bottom: 2px solid #4A90E2; padding-bottom: 2px;">
-                        LEARN MORE
-                    </a>
-                </div>
-            </div>
-        </div>
+    <div class="col-abc" style="flex: 1;">
+      <div class="form-group">
+        <label for="phone" class="small text-muted">Phone Number</label>
+        <input type="text" class="form-control" id="phone" required />
+      </div>
     </div>
-</div>
-
-<style>
-    .carousel-slide {
-        display: none;
-        animation: fade 2.5s ease-in-out;
-    }
-
-    .carousel-slide.active {
-        display: block;
-    }
-
-    @keyframes fade {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-</style>
-
-
-<div style="margin-bottom: 100px;">
-    <p> <h1 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">
-        Why BMC <span style="color: orangered;"> ?</span>
-    </h1></p>
-</div>
-
-<!--About Us starts here-->
-<div class="about-us" style="
-    margin-top: -300px; 
-    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
-    url('image/whybackground.png') no-repeat center center / cover; 
-    min-height: 100vh; 
-    padding: 20px;">
-   >
-   
-
-    <div class="templates" style="margin-top: 200px;" >
-        <div class="template-1" style="background-color: #4A90E2;">
-            <div class="temp-back">
-                <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4><b>Experienced Faculty</b></h4>
-                <h5>Our teachers have years of experience in their fields, ensuring students receive top-tier education and guidance.</h5>
-                <a href="#">
-                    <h4><p>Read More</p></h4>
-                </a>
-            </div>
-        </div>
-        <div class="template-1" style="background-color: #4A90E2;">
-            <div class="temp-back">
-                <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4><b>Comprehensive Curriculum</b></h4>
-                <h5>Our courses are designed to cover theoretical & practical knowledge .</h5>
-                <a href="#">
-                    <h4><p>Read More</p></h4>
-                </a>
-            </div>
-        </div>
-        <div class="template-1" style="background-color: #4A90E2;">
-            <div class="temp-back">
-                <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4><b>Practical Learning</b></h4>
-                <h5>Students gain hands-on experience through labs, workshops, and industry projects to ensure deep learning.</h5>
-                <a href="#">
-                    <h4><p>Read More</p></h4>
-                </a>
-            </div>
-        </div>
-        <div class="template-1" style="background-color: #4A90E2;">
-            <div class="temp-back">
-                <div class="icon-container1"><i class="fa-solid fa-graduation-cap"></i></div>
-                <h4><b>Industry Collaboration</b></h4>
-                <h5>We partner with top companies for internships and placements, offering students valuable opportunities.</h5>
-                <a href="#">
-                    <h4><p>Read More</p></h4>
-                </a>
-            </div>
-        </div>
+  </div>
+  
+  
+        <!-- Address and Course Selection -->
+<div class="row mb-3" style="display: flex; gap: 10px;">
+    <!-- Address -->
+    <div class="col-abc" style="flex: 1;">
+      <div class="form-group">
+        <label for="address" class="small text-muted">Address</label>
+        <input type="text" class="form-control" id="address" required />
+      </div>
     </div>
-</div>
-
-<style>
-    /* Define the growing effect animation */
-@keyframes growEffect {
-    0% {
-        transform: scaleY(0.5); /* Initially scaled down vertically */
-        opacity: 0; /* Initially invisible */
-    }
-    100% {
-        transform: scaleY(1); /* Full size */
-        opacity: 1; /* Fully visible */
-    }
-}
-
-/* Add initial styles to the .template-1 boxes */
-.template-1 {
-    transition: transform 1s ease, opacity 1s ease;
-    transform: scaleY(0.5); /* Initially scaled down */
-    opacity: 0; /* Initially invisible */
-    visibility: hidden; /* Start hidden */
-}
-
-/* When the element is in the viewport, we trigger the animation */
-.template-1.active {
-    animation: growEffect 1s forwards; /* Apply grow animation */
-    visibility: visible; /* Make it visible once the animation is triggered */
-}
-
-/* Optional: Add styles for the container and general layout */
-.about-us {
-    padding: 50px 0;
-}
-
-.templates {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.template-1 {
-    flex: 1 1 22%; /* Adjust the width of each box */
-    margin: 10px;
-    padding: 20px;
-    text-align: center;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-}
-
-</style>
-
-
-<!--about us content starts here-->
-<div class="aboutus-content d section">
-<div class="image-content">
-    <img src="image/bmcbuilding.jpg" alt="">
-    <div class="no">
-        <p><h4>Need to know More Details?</h4></p>
-        <p><h3>(+977) 9812345678</h3></p>
+    <!-- Course Selection -->
+    <div class="col-abc" style="flex: 1;">
+      <div class="form-group">
+        <label for="course" class="small text-muted">Interested Course</label>
+        <select id="course" class="form-control" required>
+          <option value="" disabled selected>Select a course</option>
+          <option value="1">BSc (Hons) Computing</option>
+          <option value="2">BBA (Hons) Business</option>
+          <option value="3">Foundation in IT</option>
+        </select>
+      </div>
     </div>
-    <div class="circ"><i class="fa-solid fa-graduation-cap"></i></div>
-</div>
-<div class="text-content">
-    <p><h3 style="font-size: 2.4em; font-weight: 700; color: #4A90E2; margin: 0; word-wrap: break-word; text-align: center;">About Us</h3></p>
-
-   
-<p><h2 style="color:orangered;">Building a Lifelong Learning <br> and Thriving Community</h2></p>
-<p><h5>Birat Multiple College is dedicated to nurturing talents, fostering innovation, and creating a supportive environment where students and educators thrive together.</h5></p>
-
-    <div class="div1">
-        <div class="container2">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <div class="text-portion" style="cursor: pointer;">
-                <p1><h4>Mission</h4></p1>
-                <p2><h5 >Our mission is to foster academic excellence and ethical values, preparing students to excel in their chosen fields.</h5></p2>
-                
+  </div>
+  
+  
+            <!-- How Did You Hear -->
+            <div class="form-group mb-3">
+              <label for="hearAboutUs" class="small text-muted">How did you hear about us?</label>
+              <select id="hearAboutUs" class="form-control" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="1">Social Media</option>
+                <option value="2">Friends/Family</option>
+                <option value="3">Website</option>
+                <option value="4">Other</option>
+              </select>
             </div>
-        </div>
-        <div class="container2" style="cursor: pointer;">
-            <i class="fa-solid fa-graduation-cap" ></i>
-            <div class="text-portion">
-                <p1><h4>Vision</h4></p1>
-<p2><h5>Birat Multiple College aims to provide quality education and holistic development to empower students for a brighter future.</h5></p2>
-
+  
+            <!-- Queries -->
+            <div class="form-group mb-4">
+              <label for="queries" class="small text-muted">Your Queries</label>
+              <textarea
+                id="queries"
+                class="form-control"
+                rows="4"
+                placeholder="Enter any questions or queries here"
+              ></textarea>
             </div>
+  
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-success btn-block" style="margin-bottom: 40px;">
+              Submit Form
+            </button>
+          </form>
         </div>
+      </div>
     </div>
-    <a href="about.html" class="button-hover" style="background-color: green;">
-        <h4>Discover More</h4>
-        <i class="fa-solid fa-arrow-right"></i>
-    </a>
-</div>
-</div> 
-
-<style>
-    /* Initial setup for the animation */
-.aboutus-content {
-    opacity: 0; /* Initially hidden */
-    transform: translateY(100px); /* Start from below */
-    transition: all 0.8s ease-in-out; /* Smooth animation */
-}
-
-/* Animation when in viewport */
-.aboutus-content.visible {
-    opacity: 1; /* Make visible */
-    transform: translateY(0); /* Move to the original position */
-}
-
-/* Hover effect for the button */
-.button-hover {
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth background color and transform */
-}
-
-.button-hover:hover {
-    background-color: #228B22; /* Darker green on hover */
-    transform: scale(1.1); /* Slight scale effect */
-}
-
-/* Hover effect for the image */
-.image-content img {
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth scale and filter */
-}
-
-.image-content img:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    filter: brightness(0.8); /* Darken the image */
-}
-
-/* Hover effect for the icons */
-.circ {
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.circ:hover {
-    transform: rotate(360deg); /* Spin effect on hover */
-    color: #4A90E2; /* Change color on hover */
-}
-
-/* Hover effect for the text content */
-.text-content p h3,
-.text-content p h2 {
-    transition: color 0.3s ease; /* Smooth text color change */
-}
-
-.text-content p h3:hover,
-.text-content p h2:hover {
-    color: #4A90E2; /* Highlight text on hover */
-}
-
-/* Hover effect for mission and vision containers */
-.container2:hover {
-    transform: scale(1.05); /* Slight scale effect */
-    transition: transform 0.3s ease; /* Smooth scale effect */
-}
-
-/* For animations on scroll */
-@media (max-width: 768px) {
-    .aboutus-content {
-        padding: 20px; /* Ensure proper padding for small screens */
-    }
-}
+  </div>
+  
 
 
 
-/* Start the section with hidden opacity and translate it */
-.section {
-    opacity: 0;
-    transform: translateY(100px);
-    animation: none; /* No animation initially */
-}
-
-/* When the section becomes visible, apply the animation */
-.section.visible {
-    animation: slideIn 0.8s ease-in-out forwards; /* Apply animation */
-}
-
-/* Keyframe for the slideIn animation */
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 
-/* Add this to your existing CSS animations */
-
-/* Animation for all sections (this can be customized for each section) */
-.section img {
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth scale and filter */
-}
-
-.section img:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    filter: brightness(0.8); /* Darken the image */
-}
-
-.section h2,
-.section h3 {
-    transition: color 0.3s ease; /* Smooth text color change */
-}
-
-.section h2:hover,
-.section h3:hover {
-    color: #4A90E2; /* Highlight text on hover */
-}
-
-</style>
-<div class="testimonal" style="overflow: hidden;">
-    <p><h3>Testimonal</h3></p>
-    <p><h2>What Our Student Feedback</h2></p>
-    <div class="box-container">
-        <div class="container">
-            <div class="wrapper">
-                <div class="slider-content">
-                    <!-- Testimonial 1 -->
-                    <div class="test-box">
-                        <img class="image-right" src="image/aarti.jpg" alt="Testimonial Image">
-                        <p><h4>Being a student Birat Multiple College has been an incredible journey. The BSc Microbiology program provided me with hands-on experience, exceptional faculty support, and modern lab facilities. It has truly shaped my understanding of the field and prepared me for a promising future.</h4></p>
-                        <div class="test-content">
-                            <div class="pg">
-                                <p><h3>Aarti Mahato</h3></p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial 2 -->
-                    <div class="test-box">
-                        <img class="image-right" src="image/student-sus.jpeg" alt="Testimonial Image">
-                        <p><h4>"The Food Technology program at Birat Multiple Campus  has exceeded my expectations. With a perfect blend of theoretical knowledge and practical applications, I gained valuable skills and hands-on experience. The supportive faculty and state-of-the-art labs have truly prepared me for a successful career in the food industry."</h4></p>
-                        <div class="test-content">
-                            <div class="pg">
-                                <p><h3>Sumitra Sitaula</h3></p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial 3 -->
-                    <div class="test-box">
-                        <img class="image-right" src="image/image-3.jpg" alt="Testimonial Image">
-                        <p><h4>"Studying BSc CSE IT at Birat Multiple Campus has been a transformative experience. The well-structured curriculum, experienced faculty, and modern facilities have equipped me with the technical knowledge and practical skills needed to excel in the IT industry. I am confident and ready for future challenges."</h4></p>
-                        <div class="test-content">
-                            <div class="pg">
-                                <p><h3>divya Jha</h3></p>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-
-.testimonal {
-    padding-top: 7vw;
-    text-align: center;
-    background-color: #d1c7d0;
-    padding-bottom: 10vw;
-    overflow: hidden;
-    max-width: 100%;
- 
-}
-
-.testimonal h3{
-    color: #4f5de4;
-}
-.testimonal h2{
-    color: #2a254d;
-    padding-bottom: 10vw;
-}
-.box-container{
-    margin-left: 8vw;
-    max-width: 80vw;
-    overflow: hidden;
-    border: solid 1px rgb(177, 177, 177);
-    height: fit-content;
-    background-color: rgb(247, 245, 245);
-    border-radius: 30px;
-}
-.container{
-    width: 50vw;
-   
-}
-.wrapper{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-.test-box{
-    text-align: left;
-    width: 50vw;
-    padding: 120px 70px 0px 70px;
-    align-content: center;
-    margin-left: -150px;
-}
-.test-box h4{
-    color: rgb(102, 102, 102);
-    font-weight: 400;
-    margin-top: 20px;
-    line-height: 28px;
-}
-.test-box h3{
-    color: #2a254d;
-    
-}
-.test-content{
-    margin-top: 30px;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    gap: 370px;
-    margin-bottom: 40px;
-}
-.arrow a{
-    color: #4f5de4;
-    padding: 15px 20px;
-    background-color: #dad9da;
-    border-radius: 50%;
-}
-.a-left{
-    margin-right: 15px;
-}
-.test-box .image-top{
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-top: -170px;
-    z-index: 12;
-    border: 5px solid #f8f7f8;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.pg h4{
-    margin-top: 0px;
-}
-.image-right{
-    position: absolute;
-    width: 35vw;
-    height: 35vw;
-    border-radius: 50%;
-    right: 10px;
-    margin-top: -280px;
-    border: 5px solid #f8f7f8;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    overflow: auto;
-}
-
-
-
-@media screen and (max-width: 768px) {
-    .testimonal {
-        padding-top: 10vw;  /* Adjust padding for mobile */
-        padding-bottom: 15vw; /* Adjust bottom padding for mobile */
-    }
-
-    .box-container {
-        margin-left: 5vw;
-        max-width: 90vw;
-        height: auto;
-        background-color: rgb(247, 245, 245);
-        border-radius: 20px;
-    }
-
-    .container {
-        width: 90vw; /* Increase container width for mobile */
-    }
-
-    .wrapper {
-        flex-direction: column; /* Stack the elements vertically on mobile */
-    }
-
-    .test-box {
-        text-align: center; /* Center text on smaller screens */
-       width: 350px;
-        margin-left: 1px;
-    }
-
-    .image-right {
-        width: 25vw; /* Smaller image size for mobile */
-        height: 25vw;
-        margin-top: -100px;
-        right: 150px;
-
-    }
-
-    .test-box .image-top {
-        width: 120px;  /* Adjust image size for mobile */
-        height: 120px;
-        
-       
-    }
-
-    .test-box h3,
-    .test-box h4 {
-        font-size: 18px;  /* Reduce font size for mobile */
-        
-    }
-
-    .test-box h3{
-        margin-left: 60px;  
-    }
-
-    .arrow a {
-        padding: 10px 15px; /* Smaller arrow buttons on mobile */
-    }
-}
-
-
-
-    </style>
-
-
-<div class="blog ">
-    <p><h3>Latest Blog</h3></p>
-    <p><h2>Latest Updates & Articles</h2></p>
-    <div class="blog-container">
-        <div class="blog-1">
-            <img src="image/image-2.jpg" alt="">
-            <div class="blog-text">
-                <p><h5>Motivational</h5></p>
-                <p><h2>A Complete Guide to stay Motivated and conentrated- 2024</h2></p>
-               <div class="flex-info">
-                    <img src="image/bmcbuilding.jpg" alt="">
-                <div class="s1">
-                    <p><h4>BMC College</h4></p>
-                    <p><h5>Carrer Counselling</h5></p>
-                </div>
-                <div class="s2">
-                    <p><h4>26 Mar, 2024</h4></p>
-                </div>
-               </div>
-            </div>
-        </div>
-        <div class="blog-2">
-            <img src="image/su-student-2.jpg" alt="">
-            <div class="blog-text">
-                <p><h5>Development</h5></p>
-                <p><h2>The Complete Web Developer Guideline 2023</h2></p>
-               <div class="flex-info">
-                    <img src="image/bmcbuilding.jpg" alt="">
-                <div class="s1">
-                    <p><h4>BMC College</h4></p>
-                    <p><h5>FRONTEND DEVELOPER</h5></p>
-                </div>
-                <div class="s2">
-                    <p><h4>20 Sep, 2024</h4></p>
-                </div>
-               </div>
-            </div>
-        </div>
-        <div class="blog-3">
-            <div class="blog-3-container">
-                <i class="fa-solid fa-graduation-cap"></i>
-            <p><h2>Subscribe to Our Newsletter for Daily Updates</h2></p>
-            <div class="login-container">
-                <form action="#">
-                  <input type="email" placeholder="Enter your email" required>
-                  <button type="submit" class="button-hover">Subscribe</button>
-                </form>
-                  <p><h4>Get Latest News and keep Update</h4></p>
-            </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <style>
     .foot {
@@ -1921,7 +1244,8 @@ img {
   background-size: cover; /* Makes the image cover the container */
   background-position: center; /* Centers the background image */
   background-repeat: no-repeat; /* Avoids repeating the image */
-  margin-top: -30px;
+
+ 
 }
 
 @media (max-width: 768px) {
@@ -1937,7 +1261,7 @@ img {
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(4, 0, 20, 0.8);"></div>
     
     <div class="eduact">
-        <a href="index.html"><h2>Birat Multiple Campus</h2></a>
+        <a href=""><h2>Birat Multiple Campus</h2></a>
         <p><img src="logo.png" alt="Logo" class="logo" style="width: 100px; height: auto;"></p>
 
       
@@ -1947,9 +1271,9 @@ img {
         <div class="quick-links">
             <p><h3>Quick Links</h3></p>
             <div class="links-foot">
-                <p><a class="i1" href="courses.html">Courses</a></p>
-                <p><a class="i1" href="about.html">Mission & Vision</a></p>
-           
+                <p><a class="i1" href="">Courses</a></p>
+                <p><a class="i1" href="">Mission & Vision</a></p>
+                <p><a class="i1" href="">Join a Career</a></p>
             </div>
         </div>
         
@@ -1957,10 +1281,10 @@ img {
             <p><h3>Explore</h3></p>
             <div class="links-foot">
                 <p><a class="i1" href="about.html">About Us</a></p>
-                <p><a class="i1" href="gallery.html">Gallery</a></p>
+               
                 <p><a class="i1" href="blog.html">Blog & News</a></p>
                 <p><a class="i1" href="faq.html">FAQ Questions</a></p>
-               
+                <p><a class="i1" href="testimonial.html">Testimonial</a></p>
                
             </div>
         </div>
@@ -1982,12 +1306,12 @@ img {
         </div>
        
     </div>
-  </div>
-  
-  <footer class=""> 
+</div>
+
+<footer class=""> 
     <p><h4>Copyright 2024 | Birat Multiple College. All Rights Reserved</h4></p>
     <p style="margin-top: -50px;"><h4>Design By <span>Brandwave</span></h4> </p>
-  </footer>
+</footer>
 
 
 <style>
@@ -2033,35 +1357,8 @@ img {
         align-items: center; /* Center align for better appearance */
     }
 }
-
-
-
 </style>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <div class="floating-icons" >
                         <a href="https://wa.me/+9779817373232" target="_blank" class="icon whatsapp">
                           <img src="Whatsapp_icon.png" alt="WhatsApp" />
